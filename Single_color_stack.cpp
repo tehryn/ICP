@@ -1,24 +1,12 @@
-#ifndef SINGLE_COLOR_STACK
-#define SINGLE_COLOR_STACK
-#include "Card.cpp"
-#include "Card_stack.cpp"
-using namespace std;
-class Single_color_stack: Card_stack {
-protected:
-    int color = ERR;
-public:
-    Single_color_stack(int color) {this->color = color;}
-    int get_color() {return this->color;}
-    bool push(Card card);
-};
+#include "Single_color_stack.hpp"
 
 bool Single_color_stack::push(Card card) {
+    std::cout << card << "==" << (1 + this->last().get_value()) << "(" << this->color << ")" << std::endl;
     if (card.get_color() == this->color && card.get_value() == (1 + this->last().get_value())) {
         this->force_push(card);
-        return false;
+        return true;
     }
     else {
         return false;
     }
 }
-#endif
