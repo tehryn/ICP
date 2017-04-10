@@ -13,8 +13,11 @@ int main() {
     Single_color_stack H_stack(HEARTS);
     for (int i = 1, j = 3; i < 5; i++, j++) {
         Card card1(i, HEARTS), card2(j, HEARTS), card3(i, SPADES);
-        cout << H_stack.push(card1) << endl;
-        cout << H_stack.push(card2) << endl;
-        cout << H_stack.push(card3) << endl;
+//        cout << H_stack.push(card1) << endl;
+//        cout << H_stack.push(card2) << endl;
+//        cout << H_stack.push(card3) << endl;
+    }
+    while(H_stack.size()) {
+//        cout << H_stack.pop();
     }
 }

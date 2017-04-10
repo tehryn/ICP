@@ -12,13 +12,29 @@ public:
     Card_stack() {}
     size_t size() {return this->stack.size();}
     void force_push(Card card) {this->stack.push_back(card);}
-    virtual Card pop() {
+    void insert_bottom(Card card) {
+        if (this->stack.size() > 0) {
+            this->stack.insert(this->stack.begin(), card);
+        }
+        else {
+            this->stack.push_back(card);
+        }
+    }
+    Card pop() {
         Card card = this->stack.back();
         this->stack.pop_back();
         return card;
     }
-    Card last() {
+    Card pop_bottom() {
+        Card card = this->stack.front();
+        this->stack.erase(this->stack.begin());
+    }
+    Card top() {
         if (this->stack.size()) return this->stack.back();
+        else return Card(0, ERR);
+    }
+    Card bottom() {
+        if (this->stack.size()) return this->stack.front();
         else return Card(0, ERR);
     }
     Card pop_random();
