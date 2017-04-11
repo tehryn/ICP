@@ -2,6 +2,9 @@
 #include "Card_stack.hpp"
 #include "Single_color_stack.hpp"
 #include "Working_stack.hpp"
+#include "Card_deck_hidden.hpp"
+#include "Card_deck_visible.hpp"
+#include "Board.hpp"
 
 using namespace std;
 int main() {
@@ -49,4 +52,6 @@ int main() {
 //    cout << "should be 22: " << W_stack1.size() << W_stacktmp.size() << endl;
     W_stacktmp.push(W_stack1.pop_until(card3));
 //    cout << "should be 04: " << W_stack1.size() << W_stacktmp.size() << endl;
+    Board game;
+    game.new_game();
 }

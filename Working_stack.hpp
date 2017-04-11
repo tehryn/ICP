@@ -1,3 +1,5 @@
+#ifndef WORKING_STACK
+#define WORKING_STACK
 #include "Card.hpp"
 #include "Card_stack.hpp"
 
@@ -7,3 +9,4 @@ public:
     bool push(Working_stack stack);
     Working_stack pop_until(Card card);
 };
+#endif

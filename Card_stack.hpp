@@ -38,6 +38,9 @@ public:
         if (this->stack.size()) return this->stack.front();
         else return Card(0, ERR);
     }
+    void set_top_visible() {
+        this->stack.front().make_visible();
+    }
     Card pop_random();
     static Card_stack new_deck();
 };
