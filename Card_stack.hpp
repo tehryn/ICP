@@ -28,6 +28,7 @@ public:
     Card pop_bottom() {
         Card card = this->stack.front();
         this->stack.erase(this->stack.begin());
+        return card;
     }
     Card top() {
         if (this->stack.size()) return this->stack.back();
