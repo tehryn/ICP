@@ -14,3 +14,18 @@ void Board::new_game() {
         tmp = pack_of_cards.pop_random();
     }
 }
+
+bool Board::move_Wstack(unsigned from, unsigned to, Card card) {
+    if (from > 7 || to > 7) {
+        return false;
+    }
+    Working_stack tmp = working_stacks[from].pop_until(card);
+    if (tmp.size() > 0) {
+        if (!working_stacks[to].push(tmp)) {
+            int size = tmp.size();
+            for (int i = 0; i < size; i++) {
+                working_stacks[from].force_push(tmp.pop_bottom());
+            }
+        }
+    }
+}
