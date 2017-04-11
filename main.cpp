@@ -29,13 +29,24 @@ int main() {
     Card card4 = Card(10, CLUBS);
     Card card5 = Card(9, SPADES);
     Card card6 = Card(8, HEARTS);
-    Working_stack W_stack1;
+    card1.make_visible();
+    card2.make_visible();
+    card3.make_visible();
+    card4.make_visible();
+    card5.make_visible();
+    card6.make_visible();
+    Working_stack W_stack1, W_stack2, W_stacktmp;
     W_stack1.push(card1);
     W_stack1.push(card2);
     W_stack1.push(card3);
     W_stack1.push(card4);
     W_stack1.push(card5);
     W_stack1.push(card6);
-    cout << "should be 4: " << W_stack1.size() << endl;
-
+//    cout << "should be 4: " << W_stack1.size() << endl;
+    W_stacktmp = W_stack1.pop_until(card1);
+//    cout << "should be 04: " << W_stack1.size() << W_stacktmp.size() << endl;
+    W_stack1 = W_stacktmp.pop_until(card3);
+//    cout << "should be 22: " << W_stack1.size() << W_stacktmp.size() << endl;
+    W_stacktmp.push(W_stack1.pop_until(card3));
+//    cout << "should be 04: " << W_stack1.size() << W_stacktmp.size() << endl;
 }

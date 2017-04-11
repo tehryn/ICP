@@ -5,7 +5,6 @@ bool Working_stack::push(Card card) {
         force_push(card);
         return true;
     }
-    std::cout << card << " podoba se " << this->top() << "=" << card.is_similar(this->top()) << std::endl;
 
     if ((this->top().get_value() - 1) == card.get_value() && !card.is_similar(this->top())) {
         force_push(card);
@@ -30,6 +29,7 @@ bool Working_stack::push(Working_stack stack) {
         return false;
     }
 }
+
 Working_stack Working_stack::pop_until(Card card) {
     int i = -1;
     for(i = this->size() - 1; i >= 0; i--) {
