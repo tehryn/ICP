@@ -15,7 +15,7 @@ void Board::new_game() {
     }
 }
 
-bool Board::move_Wstack(unsigned from, unsigned to, Card card) {
+bool Board::fromW_toW(unsigned from, unsigned to, Card card) {
     if (from > 7 || to > 7) {
         return false;
     }
@@ -26,6 +26,54 @@ bool Board::move_Wstack(unsigned from, unsigned to, Card card) {
             for (int i = 0; i < size; i++) {
                 working_stacks[from].force_push(tmp.pop_bottom());
             }
+            return false;
+        }
+        else {
+            working_stacks[from].set_top_visible();
+            return true;
         }
     }
 }
+
+bool Board::fromC_toC(unsigned from, unsigned to) {
+    if (color_stacks[to].size() != 0 || color_stacks[from].size() != 1 || to > 3 || from > 3) {
+        return false;
+    }
+    else {
+        return color_stacks[to].push(color_stacks[from].pop());
+    }
+}
+
+bool Board::fromW_toC(unsigned from, unsigned to) {
+    if (from >= 7 || to >= 4) {
+        return false;
+    }
+    else {
+        Card tmp = working_stacks[from].top();
+        if (color_stacks[to].push(tmp)) {
+            working_stacks[from].pop();
+            working_stacks[from].set_top_visible();
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+}
+
+void Board::fromH_toV() {
+    if (hidden_deck.size() == 0) {
+        int size = hidden_deck.size();
+        for (int i = 0; i < size; i++) {
+            Card tmp = visible_deck.pop();
+            tmp.make_hidden();
+            hidden_deck.force_push(tmp);
+        }
+    }
+    else {
+        Card tmp = hidden_deck.pop();
+        tmp.make_visible();
+        visible_deck.force_push(tmp);
+    }
+}
+

@@ -25,16 +25,9 @@ public:
     Working_stack *get_stack(unsigned id) {
         return (id<7)?(&(working_stacks[id])):NULL;
     }
-    bool move_Wstack(unsigned from, unsigned to, Card card);
-    bool move_Cstack(unsigned from, unsigned to) {
-        if (color_stacks[to].size() != 0 || color_stacks[from].size() != 1 || to > 3 || from > 3) {
-            return false;
-        }
-        else {
-            return color_stacks[to].push(color_stacks[from].pop());
-        }
-    }
+    bool fromW_toW(unsigned from, unsigned to, Card card);
+    bool fromC_toC(unsigned from, unsigned to);
     bool fromW_toC(unsigned from, unsigned to);
-
+    void fromH_toV();
 };
 #endif

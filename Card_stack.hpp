@@ -41,6 +41,14 @@ public:
     void set_top_visible() {
         this->stack.front().make_visible();
     }
+    Card get(unsigned idx) {
+        if (idx < this->size()) {
+            return this->stack[idx];
+        }
+        else {
+            return Card(0, ERR);
+        }
+    }
     Card pop_random();
     static Card_stack new_deck();
 };
