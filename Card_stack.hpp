@@ -39,7 +39,9 @@ public:
         else return Card(0, ERR);
     }
     void set_top_visible() {
-        this->stack.front().make_visible();
+        if (this->stack.size() > 0) {
+            this->stack.front().make_visible();
+        }
     }
     Card get(unsigned idx) {
         if (idx < this->size()) {

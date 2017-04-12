@@ -33,6 +33,7 @@ bool Board::fromW_toW(unsigned from, unsigned to, Card card) {
             return true;
         }
     }
+    return true;
 }
 
 bool Board::fromC_toC(unsigned from, unsigned to) {
