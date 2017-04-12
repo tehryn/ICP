@@ -52,6 +52,7 @@ public:
         }
     }
     Card pop_random();
+    void clear() { this->stack.clear();}
     static Card_stack new_deck();
 };
 #endif
