@@ -52,6 +52,15 @@ int main() {
 //    cout << "should be 22: " << W_stack1.size() << W_stacktmp.size() << endl;
     W_stacktmp.push(W_stack1.pop_until(card3));
 //    cout << "should be 04: " << W_stack1.size() << W_stacktmp.size() << endl;
-    Board game;
-    game.new_game();
+    Board game, game2;
+//    game.new_game();
+//    game.save_game("saved.txt");
+//    cout << game;
+    game2.load_game("saved.txt");
+    cout << game2 << "-----------------" << endl;
+    game2.fromH_toV();
+    game2.fromH_toV();
+    game2.fromV_toC();
+    cout << game2;
+
 }
