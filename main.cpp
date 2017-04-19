@@ -7,6 +7,9 @@
 #include "Board.hpp"
 
 using namespace std;
+void print(Board g) {
+    cout << g;
+}
 int main() {
     Card_stack card_pack = Card_stack::new_deck();
     Card card = card_pack.pop_random();
@@ -60,7 +63,12 @@ int main() {
     cout << game2 << "-----------------" << endl;
     game2.fromH_toV();
     game2.fromH_toV();
-    game2.fromV_toC();
+    game2.fromV_toC(0);
+    game2.fromC_toC(0, 2);
+    game2.fromH_toV();
+    game2.fromV_toC(0);
+    game2.fromV_toC(0);
+
     cout << game2;
 
 }

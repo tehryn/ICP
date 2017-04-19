@@ -31,21 +31,23 @@ bool Working_stack::push(Working_stack stack) {
 }
 
 Working_stack Working_stack::pop_until(Card card) {
-    int i = -1;
-    for(i = this->size() - 1; i >= 0; i--) {
-            if (card == this->stack[i] && this->stack[i].is_visible()) {
-                break;
-            }
+    Card popped = this->pop();
+    Card on_top = this->top();
+    Working_stack new_stack = Working_stack();
+    Working_stack err_stack = Working_stack();
+    new_stack.force_push(popped);
+    while (!popped.is_similar(on_top) && !(popped == card) && popped.is_visible()) {
+        popped = this->pop();
+        on_top = this->top();
+        new_stack.insert_bottom(popped);
     }
-    if (i < 0 || !this->stack[i].is_visible()) {
-        Working_stack empty;
-        return empty;
+    if (popped == card) {
+        return new_stack;
     }
-    Card compare_to = this->top();
-    Working_stack new_stack;
-    while (!(card == compare_to)) {
-        compare_to = pop();
-        new_stack.insert_bottom(compare_to);
+    else {
+        for (unsigned i = 0; i < new_stack.size(); i++) {
+            force_push(new_stack.pop_bottom());
+        }
+        return err_stack;
     }
-    return new_stack;
 }

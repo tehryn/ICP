@@ -9,6 +9,7 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <exception>
 
 
 
@@ -26,23 +27,7 @@ public:
      * Removes all cards from board and creates new game.
      */
     void new_game();
-    bool load_game(std::string filename) {
-        std::fstream in(filename, std::fstream::in);
-        if (in.is_open()) {
-            in >> this;
-            if (!in.fail()) {
-                in.close();
-                return true;
-            }
-            else {
-                in.close();
-                return false;
-            }
-        }
-        else {
-            return false;
-        }
-    }
+    bool load_game(std::string filename);
 
     bool save_game(std::string filename) {
         std::ofstream out(filename, std::ofstream::out);
@@ -92,6 +77,21 @@ public:
      * @return      True on succes, false on invalid operation.
      */
     bool fromC_toW(unsigned from, unsigned to);
+
+    /**
+     * Moves card from visible deck to specific color stack.
+     * @param  to ID of color stack.
+     * @return    True on succes, false on invalid operation.
+     */
+    bool fromV_toC(unsigned to);
+
+    /**
+     * Moves card from Visible deck to specific color stack.
+     * @param  to ID of color stack.
+     * @return    True on succes, false on invalid operation.
+     */
+    bool fromV_toW(unsigned to);
+
     /**
      * Takes next card from hidden pack to visible pack or move all cards from
      * Visible pack into hidden, if hidden pack is empty.
@@ -108,89 +108,6 @@ public:
         stream << board.hidden_deck   << "\n";
         stream << board.visible_deck << "\n";
         stream << board.score        << "\n";
-        return stream;
-    }
-
-private:
-    friend std::istream& operator >> (std::istream& stream, Board *board) {
-        std::string line;
-        int lines = 0;
-        size_t size;
-        while (!stream.eof()) {
-            getline(stream, line);
-            if (lines < 13) {
-                size = line.size();
-                std::string tmp = "";
-                int value = 0;
-                Card card;
-                char c = 'E';
-                for(unsigned i = 0; i < size; i++) {
-                    if (line[i] == '\n') {
-                        break;
-                    }
-                    else if (line[i] == '(') {
-                        value = stoi(tmp);
-                    }
-                    else if (line[i] == ')') {
-                        tmp = "";
-                        if (c == 'C') {
-                            card = Card(value, CLUBS);
-                        }
-                        else if (c == 'D') {
-                            card = Card(value, DIAMONDS);
-                        } else if (c == 'H') {
-                            card = Card(value, HEARTS);
-                        } else if (c == 'S') {
-                            card = Card(value, SPADES);
-                        }
-                        else {
-                             stream.setstate(std::ios::failbit);
-                             return stream;
-                        }
-                        i++;
-                        if (line[i] == 'T') {
-                            card.make_visible();
-                        }
-                        switch(lines) {
-                            /*from 0 to 6 - reading working_stacks*/
-                            case 0:
-                            case 1:
-                            case 2:
-                            case 3:
-                            case 4:
-                            case 5:
-                            case 6:
-                                board->working_stacks[lines].force_push(card);
-                                break;
-                            /* from 7 to 10 - reading color_stacks*/
-                            case 7:
-                            case 8:
-                            case 9:
-                            case 10:
-                                board->color_stacks[lines-7].force_push(card);
-                                break;
-                            /* reading hidden_deck */
-                            case 11:
-                                board->hidden_deck.force_push(card);
-                                break;
-                            /* reading visible_deck */
-                            case 12:
-                                board->visible_deck.force_push(card);
-                        }
-                    }
-                    else {
-                        tmp += line[i];
-                        c    = line[i];
-                    }
-                }
-            }
-            else {
-                board->score = stoi(line);
-                return stream;
-            }
-            lines++;
-        }
-        stream.setstate(std::ios::failbit);
         return stream;
     }
 };
