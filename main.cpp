@@ -5,12 +5,16 @@
 #include "Card_deck_hidden.hpp"
 #include "Card_deck_visible.hpp"
 #include "Board.hpp"
+#include "Console.hpp"
 
 using namespace std;
 void print(Board g) {
     cout << g;
 }
 int main() {
+    Console bash;
+    cin >> bash;
+    return 0;
     Card_stack card_pack = Card_stack::new_deck();
     Card card = card_pack.pop_random();
     while (card.get_color() != ERR) {

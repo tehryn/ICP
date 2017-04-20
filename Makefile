@@ -11,10 +11,13 @@ Working_stack.o: Working_stack.cpp Working_stack.hpp
 	$(CC) $(OFLAGS) $^
 Board.o: Board.cpp Board.hpp
 	$(CC) $(OFLAGS) $^
+Console.o: Console.cpp Console.hpp
+	$(CC) $(OFLAGS) $^
 main.o: main.cpp
 	$(CC) $(OFLAGS) $^
 
-icp.out: main.o Single_color_stack.o Card_stack.o Working_stack.o Board.o
+
+icp.out: main.o Single_color_stack.o Card_stack.o Working_stack.o Board.o Console.o
 	$(CC) $(CFLAGS) -o $@ $^
 
 .PHONY: clean

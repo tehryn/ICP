@@ -24,6 +24,9 @@ public:
     void make_visible()        { this->visibility = true; }
     void make_hidden()         { this->visibility = false; }
     bool is_similar(Card card) { return (card.color%2) == (this->color%2); }
+    bool is_error_card() const {
+        return color == ERR || value <= 0 || value > 13;
+    }
     std::string to_string() const {
         std::string str;
         str += this->value + "(";
@@ -48,7 +51,10 @@ public:
     }
 
     friend std::ostream& operator << (std::ostream& stream, const Card card) {
-        if(card.visibility) {
+        if (card.is_error_card()) {
+            stream << "--|EMPTY |";
+        }
+        else if(card.visibility) {
             switch(card.value) {
                 case 13: stream << "--| K"; break;
                 case 12: stream << "--| Q"; break;
@@ -66,7 +72,7 @@ public:
             }
         }
         else {
-            stream << "--| N(X) |";
+            stream << "--|OOOOOO|";
         }
         return stream;
     }
