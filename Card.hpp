@@ -1,6 +1,7 @@
 #ifndef CARD
 #define CARD
 #include <iostream>
+#include <string>
 enum Color {
     ERR = 0,
     HEARTS,
@@ -23,23 +24,50 @@ public:
     void make_visible()        { this->visibility = true; }
     void make_hidden()         { this->visibility = false; }
     bool is_similar(Card card) { return (card.color%2) == (this->color%2); }
+    std::string to_string() const {
+        std::string str;
+        str += this->value + "(";
+        switch(this->color) {
+            case HEARTS:   str += "H)"; break;
+            case SPADES:   str += "S)"; break;
+            case DIAMONDS: str += "D)"; break;
+            case CLUBS:    str += "C)"; break;
+            default:       str += "ERR)";
+        }
+        if (this->visibility) {
+            str += 'T';
+        }
+        else {
+            str += 'F';
+        }
+        return str;
+    }
+
     friend bool operator == (const Card& card1, const Card card2) {
         return (card1.value == card2.value) && (card1.color == card2.color);
     }
+
     friend std::ostream& operator << (std::ostream& stream, const Card card) {
-        char color;
-        switch(card.color) {
-            case HEARTS:   color = 'H'; break;
-            case SPADES:   color = 'S'; break;
-            case DIAMONDS: color = 'D'; break;
-            case CLUBS:    color = 'C'; break;
-            default:       color = 'E';
+        if(card.visibility) {
+            switch(card.value) {
+                case 13: stream << "--| K"; break;
+                case 12: stream << "--| Q"; break;
+                case 11: stream << "--| J"; break;
+                case 10: stream << "--|10"; break;
+                case  1: stream << "--| A"; break;
+                default: stream << "--| " << card.value;
+            }
+            switch(card.color) {
+                case HEARTS:   stream << "(H) |"; break;
+                case SPADES:   stream << "(S) |"; break;
+                case DIAMONDS: stream << "(D) |"; break;
+                case CLUBS:    stream << "(C) |"; break;
+                default:       stream << "(ERR) |";
+            }
         }
-        char vis = 'F';
-        if (card.visibility) {
-            vis = 'T';
+        else {
+            stream << "--| N(X) |";
         }
-        stream << card.value << "(" << color << ")" << vis;
         return stream;
     }
 };

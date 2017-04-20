@@ -21,6 +21,28 @@ void Board::new_game() {
     }
 }
 
+bool Board::save_game(std::string filename) {
+    std::ofstream out(filename, std::ofstream::out);
+    if (out.is_open()) {
+        std:: string str = "";
+        for (unsigned i = 0; i < 7 ; i++) {
+            str += working_stacks[i].to_string() + "\n";
+        }
+        for (unsigned i = 0; i < 4 ; i++) {
+            str += color_stacks[i].to_string() + "\n";
+        }
+        str += hidden_deck.to_string()  + "\n";
+        str += visible_deck.to_string() + "\n";
+        str += score                    + "\n";
+        out << str;
+        out.close();
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
 bool Board::load_game(std::string filename) {
     std::fstream in(filename, std::fstream::in);
     if (!in.is_open()) {

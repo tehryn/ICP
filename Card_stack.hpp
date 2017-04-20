@@ -2,6 +2,7 @@
 #define CARD_STACK
 #include <iostream>
 #include <vector>
+#include <string>
 #include "Card.hpp"
 #include <ctime>
 
@@ -59,6 +60,14 @@ public:
         else {
             return Card(0, ERR);
         }
+    }
+
+    std::string to_string() {
+        std::string str = "";
+        for (unsigned i = 0; i < size(); i++) {
+            str += get(i).to_string();
+        }
+        return str;
     }
 
     friend std::ostream& operator << (std::ostream& stream, Card_stack stack) {

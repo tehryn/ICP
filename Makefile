@@ -3,15 +3,15 @@ OFLAGS=-c -Wall -Wextra -pedantic -g -std=c++11
 CFLAGS=-std=c++11
 all: icp.out
 
-Card_stack.o: Card_stack.cpp Card_stack.hpp Card.hpp
+Card_stack.o: Card_stack.cpp Card_stack.hpp
 	$(CC) $(OFLAGS) $^
-Single_color_stack.o: Single_color_stack.cpp Card_stack.hpp Card_stack.cpp Single_color_stack.hpp Card.hpp
+Single_color_stack.o: Single_color_stack.cpp Single_color_stack.hpp
 	$(CC) $(OFLAGS) $^
-Working_stack.o: Working_stack.cpp Working_stack.hpp Card_stack.hpp Card_stack.cpp Card.hpp
+Working_stack.o: Working_stack.cpp Working_stack.hpp
 	$(CC) $(OFLAGS) $^
-Board.o: Board.cpp Board.hpp Single_color_stack.hpp Card.hpp Card_stack.hpp Card_stack.cpp Working_stack.hpp Working_stack.cpp Card_deck_visible.hpp Card_deck_hidden.hpp
+Board.o: Board.cpp Board.hpp
 	$(CC) $(OFLAGS) $^
-main.o: main.cpp Single_color_stack.hpp Card.hpp Card_stack.hpp Working_stack.hpp
+main.o: main.cpp
 	$(CC) $(OFLAGS) $^
 
 icp.out: main.o Single_color_stack.o Card_stack.o Working_stack.o Board.o
