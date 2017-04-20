@@ -27,24 +27,7 @@ public:
     bool is_error_card() const {
         return color == ERR || value <= 0 || value > 13;
     }
-    std::string to_string() const {
-        std::string str;
-        str += this->value + "(";
-        switch(this->color) {
-            case HEARTS:   str += "H)"; break;
-            case SPADES:   str += "S)"; break;
-            case DIAMONDS: str += "D)"; break;
-            case CLUBS:    str += "C)"; break;
-            default:       str += "ERR)";
-        }
-        if (this->visibility) {
-            str += 'T';
-        }
-        else {
-            str += 'F';
-        }
-        return str;
-    }
+    std::string to_string() const;
 
     friend bool operator == (const Card& card1, const Card card2) {
         return (card1.value == card2.value) && (card1.color == card2.color);

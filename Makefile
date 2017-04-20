@@ -3,6 +3,8 @@ OFLAGS=-c -Wall -Wextra -pedantic -g -std=c++11
 CFLAGS=-std=c++11
 all: icp.out
 
+Card.o: Card.cpp Card.hpp
+	$(CC) $(OFLAGS) $^
 Card_stack.o: Card_stack.cpp Card_stack.hpp
 	$(CC) $(OFLAGS) $^
 Single_color_stack.o: Single_color_stack.cpp Single_color_stack.hpp

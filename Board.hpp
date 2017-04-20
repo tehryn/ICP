@@ -101,8 +101,8 @@ public:
             stream << "  Color " << i << ": ";
             stream << board.color_stacks[i] << "\n";
         }
-        stream << "   Hidden: " << board.hidden_deck.top()  << "\n";
-        stream << "  Visible: " << board.visible_deck.top() << "\n";
+        stream << " Hidden 0: " << board.hidden_deck.top()  << "\n";
+        stream << "Visible 0: " << board.visible_deck.top() << "\n";
         stream << "    Score: " << board.score              << "\n";
         return stream;
     }
