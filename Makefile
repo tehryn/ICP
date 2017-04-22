@@ -5,7 +5,7 @@ OBJDIR=build
 SRCDIR=src/game/
 MAIN=src/main/main.cpp
 OBJECT_GAME=$(addprefix $(OBJDIR)/, Card_stack.o Single_color_stack.o \
-         Working_stack.o Board.o Console.o Board.o hra2017-cli.o)
+         Working_stack.o Board.o Console.o hra2017-cli.o)
 all: bin/hra2017-cli
 
 bin/hra2017-cli: $(OBJECT_GAME)
@@ -33,4 +33,4 @@ build/hra2017-cli.o : $(MAIN)
 
 .PHONY: clean
 clean:
-	rm build/*.o
+	rm $(OBJECT_GAME) bin/hra2017-cli
