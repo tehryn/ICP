@@ -1,8 +1,6 @@
-/*
- * Author: Matejka Jiri
- * login:  xmatej52
- * school: VUT FIT
- * date:   23. 4. 2017
+/** @file
+ *  Header file for class Working_stack.
+ *  @author Matejka Jiri (xmatej52)
  */
 #ifndef WORKING_STACK
 #define WORKING_STACK

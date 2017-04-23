@@ -1,3 +1,7 @@
+/** @file
+ *  Header file for class History.
+ *  @author Matejka Jiri (xmatej52)
+ */
 #ifndef HISTORY
 #define HISTORY
 #include <vector>

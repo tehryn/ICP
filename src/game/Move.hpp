@@ -1,3 +1,7 @@
+/** @file
+ *  Header file for class Move.
+ *  @author Matejka Jiri (xmatej52)
+ */
 #ifndef MOVE
 #define MOVE
 #include <iostream>

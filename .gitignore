@@ -29,3 +29,5 @@ build
 *.out
 *.app
 bin
+
+doc

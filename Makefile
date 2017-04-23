@@ -41,4 +41,4 @@ build/hra2017-cli.o : $(MAIN)
 clean:
 	rm $(OBJECT_GAME) bin/hra2017-cli
 doxygen:
-	doxygen doc/
+	doxygen doc/Doxyfile

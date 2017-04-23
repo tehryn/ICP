@@ -1,8 +1,6 @@
-/*
- * Author: Matejka Jiri
- * login:  xmatej52
- * school: VUT FIT
- * date:   23. 4. 2017
+/** @file
+ *  Header file for class Single_color_stack.
+ *  @author Matejka Jiri (xmatej52)
  */
 #ifndef SINGLE_COLOR_STACK
 #define SINGLE_COLOR_STACK

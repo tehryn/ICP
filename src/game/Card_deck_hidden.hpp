@@ -1,8 +1,6 @@
-/*
- * Author: Matejka Jiri
- * login:  xmatej52
- * school: VUT FIT
- * date:   22. 4. 2017
+/** @file
+ *  Header file for class Card_deck_hidden.
+ *  @author Matejka Jiri (xmatej52)
  */
 #ifndef CARD_DECK_HIDDEN
 #define CARD_DECK_HIDDEN
