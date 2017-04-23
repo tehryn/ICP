@@ -1,3 +1,9 @@
+/*
+ * Author: Matejka Jiri
+ * login:  xmatej52
+ * school: VUT FIT
+ * date:   23. 4. 2017
+ */
 #include "Console.hpp"
 
 bool Console::string_to_command(std::string str) {
@@ -49,41 +55,8 @@ bool Console::string_to_command(std::string str) {
             case 5: tmp += str[i];
         }
     }
-    card = string_to_card(tmp, 0);
+    card = Card::string_to_card(tmp, 0);
     return command(cmd1, cmd2, from, cmd3, to, card);
-}
-
-Card Console::string_to_card(std::string str, unsigned idx=0) {
-    unsigned size = str.size();
-    Card card;
-    if (idx < size) {
-        int value = 0;
-        int color = ERR;
-        switch(str[idx]) {
-            case 'A': value = 1; break;
-            case 'K': value = 13; break;
-            case 'Q': value = 12; break;
-            case 'J': value = 11; break;
-            case '1': idx++; value = 10; break;
-            default : value = str[idx] - '0';
-        }
-        idx+=2;
-        if (idx < size && value > 0 && value < 14) {
-            switch(str[idx]) {
-                case 'D': color = DIAMONDS; break;
-                case 'H': color = HEARTS; break;
-                case 'S': color = SPADES; break;
-                case 'C': color = CLUBS; break;
-                default : color = ERR;
-            }
-            card = Card(value, color);
-        }
-        return card;
-
-    }
-    else {
-        return card;
-    }
 }
 
 void Console::help() {
@@ -95,14 +68,15 @@ void Console::help() {
     std::cout << "save  - saves game into file FILENAME\n";
     std::cout << "new   - creates new game\n";
     std::cout << "help  - prints this message to stdout\n";
+    std::cout << "hint  - display one possible move\n";
     std::cout << "\n";
     std::cout << "FILENAME is string representing path to file.\n";
     std::cout << "Card_stacks represent working (W), color (C), hidden (H) or visible (V) deck.\n";
     std::cout << "Card_stack1 represents deck from which card(s) will be taken\n";
     std::cout << "Card_stack2 represents deck to which card(s) will be added\n";
-    std::cout << "FROM is ID of Card_stack1 (0-6 when Card_stack1 is working, 0-3 when Card_stack1 is color)";
-    std::cout << "TO is ID of same values as FROM, but represents ID of Card_stack2";
-    std::cout << "CARD is only used when moving card(s) between 2 working stacks";
+    std::cout << "FROM is ID of Card_stack1 (0-6 when Card_stack1 is working, 0-3 when Card_stack1 is color)\n";
+    std::cout << "TO is ID of same values as FROM, but represents ID of Card_stack2\n";
+    std::cout << "CARD is only used when moving card(s) between 2 working stacks\n";
     std::cout << "and all cards until CARD is reached will be moved between them\n";
 }
 
@@ -141,6 +115,13 @@ bool Console::command(std::string cmd1, std::string cmd2="", unsigned from=10, s
             }
         }
     }
+    else if (cmd1 == "hint") {
+        Move tmp = game.help();
+        if (!tmp.is_move_invalid()) {
+            std::cout << "move " << tmp;
+        }
+        return true;
+    }
     else if (cmd1 == "undo") {
         game.undo();
         ret = true;
@@ -150,7 +131,8 @@ bool Console::command(std::string cmd1, std::string cmd2="", unsigned from=10, s
     }
     else if (cmd1 == "save") {
         ret = game.save_game(cmd2);
-    } else if (cmd1 == "new") {
+    }
+    else if (cmd1 == "new") {
         game.new_game();
         ret = true;
     }
@@ -160,6 +142,10 @@ bool Console::command(std::string cmd1, std::string cmd2="", unsigned from=10, s
     }
     if (ret) {
         std::cout << game;
+    }
+    if (game.is_victory()) {
+        std::cout << "You won the game!" << std::endl;
+        std::cout << "But you can continue playing..." << std::endl;
     }
     return ret;
 }

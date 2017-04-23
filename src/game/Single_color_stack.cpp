@@ -1,3 +1,9 @@
+/*
+ * Author: Matejka Jiri
+ * login:  xmatej52
+ * school: VUT FIT
+ * date:   23. 4. 2017
+ */
 #include "Single_color_stack.hpp"
 
 bool Single_color_stack::push(Card card) {

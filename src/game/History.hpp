@@ -5,6 +5,7 @@
 
 /**
  * Class that holds history of moves.
+ * @author Matejka Jiri (xmatej52)
  */
 class History {
 protected:
@@ -44,6 +45,21 @@ public:
             this->stack.pop_back();
         }
         return move;
+    }
+
+    /**
+     * Retrieve number of moves in history.
+     * @return number of moves in history.
+     */
+    size_t size() {
+        return stack.size();
+    }
+
+    /**
+     * Removes all moves from vector.
+     */
+    void clear() {
+        stack.clear();
     }
 };
 #endif

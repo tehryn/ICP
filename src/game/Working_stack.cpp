@@ -1,6 +1,15 @@
+/*
+ * Author: Matejka Jiri
+ * login:  xmatej52
+ * school: VUT FIT
+ * date:   23. 4. 2017
+ */
 #include "Working_stack.hpp"
 
 bool Working_stack::push(Card card) {
+    if (card.is_error_card()) {
+        return false;
+    }
     if (this->size() == 0 && card.get_value() == 13) {
         force_push(card);
         return true;
@@ -31,10 +40,13 @@ bool Working_stack::push(Working_stack stack) {
 }
 
 Working_stack Working_stack::pop_until(Card card) {
+    Working_stack err_stack = Working_stack();
+    if (!card.is_visible()) {
+        return err_stack;
+    }
     Card popped = this->pop();
     Card on_top = this->top();
     Working_stack new_stack = Working_stack();
-    Working_stack err_stack = Working_stack();
     new_stack.force_push(popped);
     while (!popped.is_similar(on_top) && !(popped == card) && popped.is_visible()) {
         popped = this->pop();

@@ -1,23 +1,24 @@
+/*
+ * Author: Matejka Jiri
+ * login:  xmatej52
+ * school: VUT FIT
+ * date:   22. 4. 2017
+ */
 #include "Board.hpp"
 
 void Board::new_game() {
+    clear();
     Card_stack pack_of_cards = Card_stack::new_deck();
     for (int i = 0; i < 7; i++) {
-        working_stacks[i].clear();
         for (int j = 0; j < i + 1; j++) {
             working_stacks[i].force_push(pack_of_cards.pop_random());
         }
         working_stacks[i].set_top_visible();
     }
-    hidden_deck.clear();
-    visible_deck.clear();
     Card tmp = pack_of_cards.pop_random();
     while (tmp.get_color() != ERR) {
         hidden_deck.force_push(tmp);
         tmp = pack_of_cards.pop_random();
-    }
-    for (int i = 0; i < 4; i++) {
-        color_stacks[i].clear();
     }
 }
 
@@ -44,6 +45,7 @@ bool Board::save_game(std::string filename) {
 }
 
 bool Board::load_game(std::string filename) {
+    clear();
     std::fstream in(filename, std::fstream::in);
     if (!in.is_open()) {
         return false;
@@ -80,7 +82,7 @@ bool Board::load_game(std::string filename) {
                             card = Card(value, SPADES);
                         }
                         else {
-                            in.close();
+                            clear();
                             return false;
                         }
                         i++;
@@ -131,12 +133,22 @@ bool Board::load_game(std::string filename) {
         ;;;
     }
     in.close();
+    clear();
     return false;
+}
+
+bool Board::is_victory() {
+    bool ret = true;
+   for (int i = 0; i < 4; i++) {
+       if (color_stacks[i].top().get_value() != 13) {
+           ret = false;
+       }
+    }
+    return ret;
 }
 
 bool Board::fromW_toW(unsigned from, unsigned to, Card card) {
     if (from > 6 || to > 6 || card.is_error_card()) {
-        std::cerr << "Chybna karta\n";
         return false;
     }
     Working_stack tmp = working_stacks[from].pop_until(card);
@@ -146,23 +158,22 @@ bool Board::fromW_toW(unsigned from, unsigned to, Card card) {
             for (size_t i = 0; i < size; i++) {
                 working_stacks[from].force_push(tmp.pop_bottom());
             }
-            std::cerr << "selhal push";
             return false;
         }
         else {
-            history.push(Move(WW, from, to, size, !working_stacks[from].top().is_visible()));
+            history.push(Move(WW, from, to, card, !working_stacks[from].top().is_visible()));
             working_stacks[from].set_top_visible();
+            generate = true;
             return true;
         }
     }
-    std::cerr << "chyba v pop until\n";
     return false;
 }
 
 bool Board::fromC_toC(unsigned from, unsigned to) {
     if (color_stacks[to].push(color_stacks[from].top())) {
-        color_stacks[from].pop();
-        history.push(Move(CC, from, to, 1, false));
+        history.push(Move(CC, from, to, color_stacks[from].pop(), false));
+        generate = true;
         return true;
     }
     else {
@@ -177,10 +188,11 @@ bool Board::fromW_toC(unsigned from, unsigned to) {
     else {
         Card tmp = working_stacks[from].top();
         if (color_stacks[to].push(tmp)) {
-            working_stacks[from].pop();
-            history.push(Move(WC, from, to, 1, !working_stacks[from].top().is_visible()));
+            Card tmp = working_stacks[from].pop();
+            history.push(Move(WC, from, to, tmp, !working_stacks[from].top().is_visible()));
             working_stacks[from].set_top_visible();
             score += 15;
+            generate = true;
             return true;
         }
         else {
@@ -195,9 +207,9 @@ bool Board::fromC_toW(unsigned from, unsigned to) {
     }
     else if (color_stacks[from].size() > 0) {
         if (working_stacks[to].push(color_stacks[from].top())) {
-            color_stacks[from].pop();
-            history.push(Move(CW, from, to, 1, false));
+            history.push(Move(CW, from, to, color_stacks[from].pop(), false));
             score = (score>15)?(score-15):0;
+            generate = true;
             return true;
         }
         else {
@@ -211,9 +223,9 @@ bool Board::fromC_toW(unsigned from, unsigned to) {
 
 bool Board::fromV_toC(unsigned to) {
     if (color_stacks[to].push(visible_deck.top())) {
-        visible_deck.pop();
-        history.push(Move(VC, 0, to, 1, false));
+        history.push(Move(VC, 0, to, visible_deck.pop(), false));
         score += 20;
+        generate = true;
         return true;
     }
     else {
@@ -223,9 +235,9 @@ bool Board::fromV_toC(unsigned to) {
 
 bool Board::fromV_toW(unsigned to) {
     if (working_stacks[to].push(visible_deck.top())) {
-        visible_deck.pop();
-        history.push(Move(VW, 0, to, 1, false));
+        history.push(Move(VW, 0, to, visible_deck.pop(), false));
         score += 5;
+        generate = true;
         return true;
     }
     else {
@@ -234,6 +246,9 @@ bool Board::fromV_toW(unsigned to) {
 }
 
 void Board::fromH_toV() {
+    if (hidden_deck.size() == 0 && visible_deck.size() == 0) {
+        return;
+    }
     if (hidden_deck.size() == 0) {
         int size = visible_deck.size();
         for (int i = 0; i < size; i++) {
@@ -242,32 +257,32 @@ void Board::fromH_toV() {
             hidden_deck.force_push(tmp);
         }
         score = (score>100)?(score-100):0;
-        history.push(Move(H, 0, 0, size, true));
+        history.push(Move(H, 0, 0, Card(0, ERR), true));
     }
     else {
         Card tmp = hidden_deck.pop();
         tmp.make_visible();
         visible_deck.force_push(tmp);
-        history.push(Move(H, 0, 0, 1, true));
+        history.push(Move(H, 0, 0, tmp, true));
     }
+    generate = true;
 }
 
 Move Board::undo() {
     Move move = history.pop();
     Card tmp;
     Working_stack new_stack;
+    size_t size;
     switch(move.get_type()) {
-        case INV: break;
+        case INV: return move;
         case WW:
             new_stack.clear();
             if (move.was_turned()) {
                 working_stacks[move.get_from()].set_top_hidden();
             }
-            for(int i = 0; i < move.get_count(); i++) {
-                tmp = working_stacks[move.get_to()].pop();
-                new_stack.insert_bottom(tmp);
-            }
-            for(int i = 0; i < move.get_count(); i++) {
+            new_stack = working_stacks[move.get_to()].pop_until(move.get_card());
+            size = new_stack.size();
+            for(unsigned i = 0; i < size; i++) {
                 working_stacks[move.get_from()].force_push(new_stack.pop_bottom());
             }
             break;
@@ -299,8 +314,9 @@ Move Board::undo() {
             score -= 20;
             break;
         case  H:
-        if (move.get_count() > 1) {
-            for(int i = 0; i < move.get_count(); i++) {
+        if (move.get_card().is_error_card()) {
+            size = hidden_deck.size();
+            for(unsigned i = 0; i < size; i++) {
                 tmp = hidden_deck.pop();
                 tmp.make_visible();
                 visible_deck.force_push(tmp);
@@ -312,11 +328,20 @@ Move Board::undo() {
             hidden_deck.force_push(tmp);
         }
     }
+    generate = true;
+    score = (score>5)?score-5:0;
     return move;
 }
 
-std::vector<Move> Board::help() {
-    std::vector<Move> possible_moves;
+Move Board::help() {
+    if (generate || possible_moves.size() == 0) {
+        generate = false;
+        generate_moves();
+    }
+    return possible_moves.pop();
+}
+
+void Board::generate_moves() {
     Card card;
     size_t size = 0;
     for (int from = 0; from < 7; from++) {
@@ -325,17 +350,27 @@ std::vector<Move> Board::help() {
             for (size_t i = 0; i < size; i++) {
                 card = working_stacks[from].get(i);
                 if (fromW_toW(from, to, card)) {
-                    possible_moves.push_back(undo());
+                    possible_moves.push(undo());
                 }
             }
         }
     }
-
     for (int from = 0; from < 7; from++) {
         for (int to = 0; to < 4; to++) {
             if (fromW_toC(from, to)) {
-                possible_moves.push_back(undo());
+                possible_moves.push(undo());
             }
         }
-    }    return possible_moves;
+    }
+    for (int to = 0; to < 7; to++) {
+        if (fromV_toW(to)) {
+            possible_moves.push(undo());
+        }
+    }
+    for (int to = 0; to < 4; to++) {
+        if (fromV_toC(to)) {
+            possible_moves.push(undo());
+        }
+    }
+    generate = false;
 }

@@ -1,3 +1,9 @@
+/*
+ * Author: Matejka Jiri
+ * login:  xmatej52
+ * school: VUT FIT
+ * date:   22. 4. 2017
+ */
 #include "Card_stack.hpp"
 
 Card_stack Card_stack::new_deck() {
