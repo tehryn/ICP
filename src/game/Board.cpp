@@ -325,6 +325,7 @@ Move Board::help() {
 }
 
 void Board::generate_moves() {
+    possible_moves.clear();
     Card card;
     size_t size = 0;
     for (int from = 0; from < 7; from++) {

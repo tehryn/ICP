@@ -48,7 +48,7 @@ Working_stack Working_stack::pop_until(Card card) {
     Card on_top = this->top();
     Working_stack new_stack = Working_stack();
     new_stack.force_push(popped);
-    while (!popped.is_similar(on_top) && !(popped == card) && popped.is_visible()) {
+    while (!popped.is_similar(on_top) && !(popped == card) && popped.is_visible() && !on_top.is_error_card()) {
         popped = this->pop();
         on_top = this->top();
         new_stack.insert_bottom(popped);
