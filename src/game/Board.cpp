@@ -50,87 +50,70 @@ bool Board::load_game(std::string filename) {
     if (!in.is_open()) {
         return false;
     }
-    try {
-        std::string line;
-        int lines = 0;
-        size_t size;
-        while (!in.eof()) {
-            getline(in, line);
-            if (lines < 13) {
-                size = line.size();
-                std::string tmp = "";
-                int value = 0;
-                Card card;
-                char c = 'E';
-                for(unsigned i = 0; i < size; i++) {
-                    if (line[i] == '\n') {
-                        break;
-                    }
-                    else if (line[i] == '(') {
-                        value = stoi(tmp);
-                    }
-                    else if (line[i] == ')') {
-                        tmp = "";
-                        if (c == 'C') {
-                            card = Card(value, CLUBS);
-                        }
-                        else if (c == 'D') {
-                            card = Card(value, DIAMONDS);
-                        } else if (c == 'H') {
-                            card = Card(value, HEARTS);
-                        } else if (c == 'S') {
-                            card = Card(value, SPADES);
-                        }
-                        else {
-                            clear();
-                            return false;
-                        }
-                        i++;
-                        if (line[i] == 'T') {
-                            card.make_visible();
-                        }
-                        switch(lines) {
-                            /*from 0 to 6 - reading working_stacks*/
-                            case 0:
-                            case 1:
-                            case 2:
-                            case 3:
-                            case 4:
-                            case 5:
-                            case 6:
-                                this->working_stacks[lines].force_push(card);
-                                break;
-                            /* from 7 to 10 - reading color_stacks*/
-                            case 7:
-                            case 8:
-                            case 9:
-                            case 10:
-                                this->color_stacks[lines-7].push(card);
-                                break;
-                            /* reading hidden_deck */
-                            case 11:
-                                this->hidden_deck.force_push(card);
-                                break;
-                            /* reading visible_deck */
-                            case 12:
-                                this->visible_deck.force_push(card);
-                        }
-                    }
-                    else {
-                        tmp += line[i];
-                        c    = line[i];
-                    }
-                }
-            }
-            else {
-                this->score = stoi(line);
+    std::string line;
+    int lines = 0;
+    size_t size;
+    while (!in.eof()) {
+        getline(in, line);
+        if (lines == 13) {
+            try {
+                score = stoi(line);
                 in.close();
                 return true;
+            } catch (std::invalid_argument &e) {
+                in.close();
+                clear();
+                return false;
             }
-            lines++;
         }
-    } catch (std::exception& e) {
-        ;;;
+        if (line == "") {
+            lines++;
+            continue;
+        }
+        size = line.size();
+        Card card;
+        std::string c = "";
+        for(unsigned i = 0; i < size; i++) {
+            if ((i + 4) >= size || line[i+1] != '(' || line[i+3] != ')' || (line.c_str()[i+4] != 'F' && line.c_str()[i+4] != 'T')) {
+                in.close();
+                clear();
+                return false;
+            }
+            if (line[i] == 'L') {
+                c = "10" + line.substr(i+1, 3);
+            }
+            else {
+                c = line.substr(i, 4);
+            }
+            card = Card::string_to_card(c);
+            if (card.is_error_card()) {
+                in.close();
+                clear();
+                return false;
+            }
+            if (line[i+4] == 'F') {
+                card.make_hidden();
+            }
+            if (lines < 7) {
+                this->working_stacks[lines].force_push(card);
+            }
+            else if (lines < 11 ) {
+                this->color_stacks[lines-7].push(card);
+            }
+            else if (lines == 11) {
+                this->hidden_deck.force_push(card);
+            }
+            else if (lines == 12) {
+                this->visible_deck.force_push(card);
+            }
+            else {
+                in.close();
+                clear();
+                return false;
+            }
+            i+=4;
+        }
+        lines++;
     }
     in.close();
     clear();
@@ -329,7 +312,7 @@ Move Board::undo() {
         }
     }
     generate = true;
-    score = (score>5)?score-5:0;
+//    score = (score>5)?score-5:0;
     return move;
 }
 
@@ -346,6 +329,9 @@ void Board::generate_moves() {
     size_t size = 0;
     for (int from = 0; from < 7; from++) {
         for (int to = 0; to < 7; to++) {
+            if (from == to) {
+                continue;
+            }
             size = working_stacks[from].size();
             for (size_t i = 0; i < size; i++) {
                 card = working_stacks[from].get(i);

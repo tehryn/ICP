@@ -135,6 +135,7 @@ public:
             case 11: str += "J"; break;
             case 12: str += "Q"; break;
             case 13: str += "K"; break;
+            case  1: str += "A"; break;
             default: str += std::to_string(value);
         }
         switch(color) {
@@ -185,6 +186,7 @@ public:
                  }
                  card = Card(value, color);
              }
+             card.visibility = true;
              return card;
 
          }
@@ -214,6 +216,7 @@ public:
             case CLUBS:    return "C";
         }
     }
+
     /**
      * Overloads output stream operator.
      */
