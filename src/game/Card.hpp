@@ -201,6 +201,20 @@ public:
     }
 
     /**
+     * Converts color to string.
+     * @param  color Color that will be converted.
+     * @return       String representing given color.
+     */
+    static std::string color_to_string(int color) {
+        switch(color) {
+            case ERR:      return "E";
+            case HEARTS:   return "H";
+            case SPADES:   return "S";
+            case DIAMONDS: return "D";
+            case CLUBS:    return "C";
+        }
+    }
+    /**
      * Overloads output stream operator.
      */
     friend std::ostream& operator << (std::ostream& stream, const Card card) {
