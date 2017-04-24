@@ -27,10 +27,19 @@ enum {
  */
 class Move {
 protected:
+    /// @var Id of stack from where card was taken.
     int from;
+
+    /// @var Id of stack where card was added.
     int to;
+
+    /// @var Card that was moved.
     Card card;
+
+    /// @var Type of move.
     int type;
+
+    /// @var Holds information if card on top of stack was turned after move.
     bool card_turned;
 public:
     /**

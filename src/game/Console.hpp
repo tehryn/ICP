@@ -39,6 +39,7 @@ private:
 
     /// @var Variable representing invalid card.
     static Card err;
+    
     /**
      * Procces command and return, if command was valide. Most of parametrs
      * are optional. If function can decide what to move, function will do it.

@@ -107,6 +107,7 @@ public:
     static std::string to_string(const Card card) {
         std::string str = "";
         switch(card.value) {
+            case  1: str += "A"; break;
             case 11: str += "J"; break;
             case 12: str += "Q"; break;
             case 13: str += "K"; break;
@@ -124,7 +125,7 @@ public:
 
     /**
      * Converts card to string. Value of 11, 12 and 13 is represented by J, Q
-     * and K. Value 10 as L Information about visibility of card is not included
+     * and K. Value 10 as L Information about visibility of card is included
      * in string.
      * @return String representing card.
      */
@@ -238,7 +239,6 @@ public:
                 case SPADES:   stream << "(S) |"; break;
                 case DIAMONDS: stream << "(D) |"; break;
                 case CLUBS:    stream << "(C) |"; break;
-                default:       stream << "(ERR) |";
             }
         }
         else {

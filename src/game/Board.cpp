@@ -26,10 +26,10 @@ bool Board::save_game(std::string filename) {
     std::ofstream out(filename, std::ofstream::out);
     if (out.is_open()) {
         std:: string str = "";
-        for (unsigned i = 0; i < 7 ; i++) {
+        for (int i = 0; i < 7 ; i++) {
             str += working_stacks[i].to_string() + "\n";
         }
-        for (unsigned i = 0; i < 4 ; i++) {
+        for (int i = 0; i < 4 ; i++) {
             str += color_stacks[i].to_string() + "\n";
         }
         str += hidden_deck.to_string()  + "\n";
@@ -74,7 +74,7 @@ bool Board::load_game(std::string filename) {
         Card card;
         std::string c = "";
         for(unsigned i = 0; i < size; i++) {
-            if ((i + 4) >= size || line[i+1] != '(' || line[i+3] != ')' || (line.c_str()[i+4] != 'F' && line.c_str()[i+4] != 'T')) {
+            if ((i + 4) >= size || line[i+1] != '(' || line[i+3] != ')' || (line[i+4] != 'F' && line[i+4] != 'T')) {
                 in.close();
                 clear();
                 return false;
@@ -171,7 +171,7 @@ bool Board::fromW_toC(unsigned from, unsigned to) {
     else {
         Card tmp = working_stacks[from].top();
         if (color_stacks[to].push(tmp)) {
-            Card tmp = working_stacks[from].pop();
+            tmp = working_stacks[from].pop();
             history.push(Move(WC, from, to, tmp, !working_stacks[from].top().is_visible()));
             working_stacks[from].set_top_visible();
             score += 15;
@@ -205,7 +205,10 @@ bool Board::fromC_toW(unsigned from, unsigned to) {
 }
 
 bool Board::fromV_toC(unsigned to) {
-    if (color_stacks[to].push(visible_deck.top())) {
+    if (to > 3) {
+        return false;
+    }
+    else if (color_stacks[to].push(visible_deck.top())) {
         history.push(Move(VC, 0, to, visible_deck.pop(), false));
         score += 20;
         generate = true;
@@ -217,7 +220,10 @@ bool Board::fromV_toC(unsigned to) {
 }
 
 bool Board::fromV_toW(unsigned to) {
-    if (working_stacks[to].push(visible_deck.top())) {
+    if (to > 7) {
+        return false;
+    }
+    else if (working_stacks[to].push(visible_deck.top())) {
         history.push(Move(VW, 0, to, visible_deck.pop(), false));
         score += 5;
         generate = true;
