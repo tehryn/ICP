@@ -69,6 +69,7 @@ void Console::help() {
     std::cout << "new   - creates new game\n";
     std::cout << "help  - prints this message to stdout\n";
     std::cout << "hint  - display one possible move\n";
+    std::cout << "undo  - undo one move\n";
     std::cout << "\n";
     std::cout << "FILENAME is string representing path to file.\n";
     std::cout << "Card_stacks represent working (W), color (C), hidden (H) or visible (V) deck.\n";

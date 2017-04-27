@@ -198,5 +198,33 @@ public:
         stream << "    Score: " << board.score              << "\n";
         return stream;
     }
+
+    /**
+     * Retrieve card from hidden deck.
+     * @param  idx Index of card in deck.
+     * @return     Card from index on succes, otherwise returns invalid card
+     *             (Color is set to ERR).
+     */
+     Card get_hidden_deck(int idx) {
+        return hidden_deck.get(idx);
+    }
+
+    /**
+     * Retrieve card from visible deck.
+     * @param  idx Index of card in deck.
+     * @return     Card from index on succes, otherwise returns invalid card
+     *             (Color is set to ERR).
+     */
+    Card get_visible_deck(int idx) {
+        return visible_deck.get(idx);
+    }
+
+    /**
+     * Retrieve score of game.
+     * @return value of scor.
+     */
+    int get_score() {
+        return score;
+    }
 };
 #endif

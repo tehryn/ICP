@@ -39,6 +39,6 @@ build/hra2017-cli.o : $(MAIN)
 
 .PHONY: clean doxygen pack
 clean:
-	rm $(OBJECT_GAME) bin/hra2017-cli
+	rm -rf $(OBJECT_GAME) bin/hra2017-cli doc/latex doc/html
 doxygen:
 	doxygen doc/Doxyfile
