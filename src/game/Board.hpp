@@ -200,12 +200,46 @@ public:
     }
 
     /**
+     * Retrieve specific card from working stack
+     * @param  id  ID of working stack.
+     * @param  idx Index of card in working stack.
+     * @return     Card from index on succes, otherwise returns invalid card
+     *             (Color is set to ERR).
+     */
+    Card get_working_stack(unsigned id, unsigned idx) {
+        if (idx < 7) {
+            return working_stacks[id].get(idx);
+        }
+        else {
+            Card err(0, ERR);
+            return err;
+        }
+    }
+
+    /**
+     * Retrieve specific card from color stack
+     * @param  id  ID of color stack.
+     * @param  idx Index of card in color stack.
+     * @return     Card from index on succes, otherwise returns invalid card
+     *             (Color is set to ERR).
+     */
+    Card get_color_stack(unsigned id, unsigned idx) {
+        if (id < 4) {
+            return color_stacks[id].get(idx);
+        }
+        else {
+            Card err(0, ERR);
+            return err;
+        }
+    }
+
+    /**
      * Retrieve card from hidden deck.
      * @param  idx Index of card in deck.
      * @return     Card from index on succes, otherwise returns invalid card
      *             (Color is set to ERR).
      */
-     Card get_hidden_deck(int idx) {
+     Card get_hidden_deck(unsigned idx) {
         return hidden_deck.get(idx);
     }
 
@@ -215,7 +249,7 @@ public:
      * @return     Card from index on succes, otherwise returns invalid card
      *             (Color is set to ERR).
      */
-    Card get_visible_deck(int idx) {
+    Card get_visible_deck(unsigned idx) {
         return visible_deck.get(idx);
     }
 
@@ -223,7 +257,7 @@ public:
      * Retrieve score of game.
      * @return value of scor.
      */
-    int get_score() {
+    unsigned get_score() {
         return score;
     }
 };
