@@ -207,7 +207,7 @@ public:
      *             (Color is set to ERR).
      */
     Card get_working_stack(unsigned id, unsigned idx) {
-        if (idx < 7) {
+        if (id < 7) {
             return working_stacks[id].get(idx);
         }
         else {
