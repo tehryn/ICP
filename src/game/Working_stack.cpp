@@ -7,7 +7,7 @@
 #include "Working_stack.hpp"
 
 bool Working_stack::push(Card card) {
-    if (card.is_error_card()) {
+    if (card.is_error_card() || !card.is_visible()) {
         return false;
     }
     if (this->size() == 0 && card.get_value() == 13) {
