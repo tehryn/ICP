@@ -38,7 +38,9 @@ build/hra2017-cli.o : $(MAIN)
 	$(CC) $(OFLAGS) -o $@ $< -DBUILDCLI
 
 .PHONY: clean doxygen pack
+pack:
+	
 clean:
-	rm -rf $(OBJECT_GAME) bin/hra2017-cli doc/latex doc/html
+	rm -rf $(OBJECT_GAME) bin/hra2017-cli doc/html
 doxygen:
 	doxygen doc/Doxyfile
