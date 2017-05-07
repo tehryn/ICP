@@ -115,11 +115,24 @@ void G_Stack::set_border(const char *style, G_Card *gcard) {
         }
     }
     else {
+       if (!(this->type == Visible) || gcard->card.is_visible())
          gcard->setStyleSheet(style);
     }
 }
 
 void G_Stack::mousePressEvent(QMouseEvent *event) {
+    G_Card *gcard = find_card(event->pos().y());
+    switch(this->type) {
+       case Working:
+           board->clicked_working(this->id , gcard); break;
+       case Single_Color:
+           board->clicked_color(this->id); break;
+       case Hidden:
+           board->clicked_hidden(); break;
+       default:
+           board->clicked_visible();
+    }
+    /*
     set_border("border: 0px;", clicked_card);
     G_Card* gcard = find_card(event->pos().y());
     if (clicked_card == nullptr) {
@@ -127,10 +140,16 @@ void G_Stack::mousePressEvent(QMouseEvent *event) {
             return;
         if (this->type == Working && !gcard->card.is_visible())
             return;
-        set_border("border: 2px solid red;", gcard);
+
+
         clicked_card = gcard;
         clicked_stack_01 = this->type;
         clicked_stack_01_index = this->id;
+
+        if (this->type == Hidden)
+            process_command();
+
+        set_border("border: 2px solid red;", gcard);
         std::cout << "Clicked: " << Card::to_string(clicked_card->card)
                   << " Stack: " << this->stack_identifier_to_str(clicked_stack_01, clicked_stack_01_index) << std::endl;
     }
@@ -148,14 +167,13 @@ void G_Stack::mousePressEvent(QMouseEvent *event) {
             std::cout << "Process command." << std::endl;
             process_command();
         }
-
-        clicked_card = nullptr;
-        clicked_stack_01 = ErrStack;
-        clicked_stack_01_index = -1;
-        clicked_stack_02 = ErrStack;
-        clicked_stack_02_index = -1;
-    }
+        else
+            reset_globals();
+    }*/
 }
 void G_Stack::process_command() {
     this->board->process_command();
+    reset_globals();
 }
+
+

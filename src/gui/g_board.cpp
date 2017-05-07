@@ -4,11 +4,14 @@
 G_Board::G_Board(QWidget *parent) : QWidget(parent)
 {
     setWindowTitle(tr("Solitaire"));
-    setStyleSheet("background-color: green");
+    setStyleSheet("background-color: green;");
     setFixedSize((9 * CARD_WIDTH), (6 * CARD_HEIGHT));
-
     card_board_layout = new QVBoxLayout(this);
     setLayout(card_board_layout);
+
+    score.setParent(this);
+    score.setWordWrap(true);
+    score.setFixedHeight(CARD_HEIGHT);
 
     left_panel_layout = new QHBoxLayout;
     left_panel.setLayout(left_panel_layout);
@@ -30,7 +33,6 @@ G_Board::G_Board(QWidget *parent) : QWidget(parent)
     card_board_layout->addWidget(&bottom_panel);
 
     // -------------------------------------------------------
-    game.load_game("./saved.txt");
     Card_deck_hidden.setParent(this);
     Card_deck_hidden.set_id(0);
     Card_deck_hidden.set_type(Hidden);
@@ -58,18 +60,20 @@ G_Board::G_Board(QWidget *parent) : QWidget(parent)
     }
 
     // ------------------------------------------
-    readCards();
 
     left_panel_layout->addWidget(&Card_deck_hidden);
     left_panel_layout->addWidget(&Card_deck_visible);
     top_panel_layout->addWidget(&left_panel);
+
+    top_panel_layout->addWidget(&score);
 
     for (int i = 0; i<4; i++)
         right_panel_layout->addWidget(&(Single_color_stack[i]));
     top_panel_layout->addWidget(&right_panel);
     for (int i = 0; i<7; i++)
         bottom_panel_layout->addWidget(&(Working_stack[i]));
-
+    game.new_game();
+    readCards();
 }
 
 void G_Board::readCards() {
@@ -114,18 +118,92 @@ void G_Board::readCards() {
 }
 
 void G_Board::process_command() {
-    std::cout << game << "AAAAAA" << std::endl;
-    bool paintable = false;
-    switch (clicked_stack_01) {
+    switch (from_type) {
         case Hidden:
-            Card_deck_hidden.set_border("border: 0px;", clicked_card);
-            if (clicked_stack_02 == Visible) {
-                game.fromH_toV();
-                std::cout << game << std::endl;
-                paintable = true;
+            game.fromH_toV();
+            rebuild_stack(from_type,0);
+            rebuild_stack(Visible, 0);
+            break;
+        case Visible:
+            Card_deck_visible.set_border("border: 0px;", Card_deck_visible.top());
+            if (to_type == Single_Color) {
+                if (!game.fromV_toC(to_id))
+                   std::cerr << "Unsuccessful command." << std::endl;
+                else {
+                    rebuild_stack(Visible, 0);
+                    rebuild_stack(Single_Color, to_id);
+                }
+            }
+            else if (to_type == Working) {
+                if (!game.fromV_toW(to_id))
+                    std::cerr << "Unsuccessful command." << std::endl;
+                else {
+                    rebuild_stack(Visible, 0);
+                    rebuild_stack(Working, to_id);
+                }
             }
             else
                 std::cerr << "Unknown command." << std::endl;
+
+            break;
+        case Single_Color:
+            Single_color_stack[from_id].set_border("border: 0px;", Single_color_stack[from_id].top());
+            if (to_type == Single_Color) {
+                if (!game.fromC_toC(from_id, to_id))
+                    std::cerr << "Unsuccessful command." << std::endl;
+                else {
+                    rebuild_stack(Single_Color, from_id);
+                    rebuild_stack(Single_Color, to_id);
+                }
+            }
+            else if (to_type == Working) {
+                if (!game.fromC_toW(from_id, to_id))
+                    std::cerr << "Unsuccessful command." << std::endl;
+                else {
+                    rebuild_stack(Single_Color, from_id);
+                    rebuild_stack(Working, to_id);
+                }
+            }
+            else
+                std::cerr << "Unknown command." << std::endl;
+        case Working:
+            Working_stack[from_id].set_border("border: 0px;", clicked);
+            if (to_type == Single_Color) {
+                if (!game.fromW_toC(from_id, to_id))
+                    std::cerr << "Unsuccessful command." << std::endl;
+                else {
+                    rebuild_stack(Working, from_id);
+                    rebuild_stack(Single_Color, to_id);
+                }
+            }
+            else if (to_type == Working) {
+                if (!game.fromW_toW(from_id, to_id, clicked->card))
+                    std::cerr << "Unsuccessful command." << std::endl;
+                else {
+                    rebuild_stack(Working, from_id);
+                    rebuild_stack(Working, to_id);
+                }
+            }
+            else
+                std::cerr << "Unknown command." << std::endl;
+        default:
+        break;
+    }
+    str_score  = "Score:\n";
+    str_score += std::to_string(game.get_score());
+    score.setText(str_score.c_str());
+    std::cout << game << std::endl;
+    proc_move = false;
+
+/*    std::cout << game << "AAAAAA" << std::endl;
+    bool paintable = false;
+    switch (clicked_stack_01) {
+        case Hidden:
+            //Card_deck_hidden.set_border("border: 0px;", clicked_card);
+
+            game.fromH_toV();
+            std::cout << game << std::endl;
+            paintable = true;
             break;
 
         case Visible:
@@ -202,7 +280,7 @@ void G_Board::process_command() {
     else
     {
         std::cout << "Nebudu prekreslovat." << std::endl;
-    }
+    }*/
 }
 void G_Board::rebuild_stack(Stacks type, int id) {
     Card card;
@@ -259,11 +337,75 @@ void G_Board::rebuild_stack(Stacks type, int id) {
             //Working_stack[id].repaint();
             //Working_stack[id].update();
             break;
-
         default:
             break;
     }
 }
 
+void G_Board::clicked_hidden()
+{
+    if (proc_move) {
+        to_type   = ErrStack;
+        process_command();
+    }
+    else {
+        from_type = Hidden;
+        process_command();
+    }
+}
+
+void G_Board::clicked_visible()
+{
+    if (proc_move) {
+         to_type   = ErrStack;
+         process_command();
+     }
+     else {
+         from_type = Visible;
+         Card_deck_visible.set_border("Border: 2px solid red;", Card_deck_visible.top());
+         proc_move = true;
+     }
+}
+
+
+void G_Board::clicked_color(int id)
+{
+    if (proc_move) {
+        to_id = id;
+        to_type = Single_Color;
+        process_command();
+    }
+    else {
+        from_id = id;
+        from_type = Single_Color;
+        Single_color_stack[id].set_border("Border: 2px solid red;", Single_color_stack[id].top());
+        proc_move = true;
+    }
+}
+
+void G_Board::clicked_working(int id, G_Card *gcard)
+{
+    if (proc_move) {
+        to_id = id;
+        to_type = Working;
+        process_command();
+    }
+    else {
+        if (gcard != nullptr) {
+            from_id = id;
+            from_type = Working;
+            Working_stack[id].set_border("Border: 2px solid red;", gcard);
+            clicked = gcard;
+            proc_move = true;
+        }
+    }
+}
+
+void G_Board::mousePressEvent(QMouseEvent *event) {
+    if (proc_move) {
+        to_type = ErrStack;
+        process_command();
+    }
+}
 
 G_Board::~G_Board() {}
