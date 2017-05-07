@@ -91,26 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Class representing text enviroment of game. Class representing text enviroment of game. All commands can be entered by input stream operator. Class will load all commands until eof is reached. <br />
- Usage of this class: <br />
- Command [FILENAME] [ [ [ [ [ Card_stack1 ] FROM ] Card_stack2 TO ] CARD ] ]<br />
- Command1 is one of following strings:<br />
- print - prints game on stdout<br />
- move - moves card(s) from Card_stack1 with index FROM to Card_stack2 with index TO until CARD is reached<br />
- load - loads game that is saved in file FILENAME<br />
- save - saves game into file FILENAME<br />
- new - creates new game<br />
- hint - display one possible move<br />
- help - prints help on stdout<br />
- FILENAME is string representing path to file.<br />
- Card_stacks represent working (W), color (C), hidden (H) or visible (V) deck.<br />
- Card_stack1 represents deck from which card(s) will be taken<br />
- Card_stack2 represents deck to which card(s) will be added<br />
- FROM is ID of Card_stack1 (0-6 when Card_stack1 is working, 0-3 when Card_stack1 is color)<br />
- TO is ID of same values as FROM, but represents ID of Card_stack2<br />
- CARD is only used when moving card(s) between 2 working stacks<br />
- and all cards until CARD is reached will be moved between them<br />
-  
+<p>Class representing text enviroment of game.  
  <a href="classConsole.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Console_8hpp_source.html">Console.hpp</a>&gt;</code></p>
@@ -130,7 +111,8 @@ Friends</h2></td></tr>
 <tr class="separator:a0c10d652f894543a426788cde1fad4ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class representing text enviroment of game. Class representing text enviroment of game. All commands can be entered by input stream operator. Class will load all commands until eof is reached. <br />
+<div class="textblock"><p>Class representing text enviroment of game. </p>
+<p>Class representing text enviroment of game. All commands can be entered by input stream operator. Class will load all commands until eof is reached. <br />
  Usage of this class: <br />
  Command [FILENAME] [ [ [ [ [ Card_stack1 ] FROM ] Card_stack2 TO ] CARD ] ]<br />
  Command1 is one of following strings:<br />
@@ -149,10 +131,9 @@ Friends</h2></td></tr>
  TO is ID of same values as FROM, but represents ID of Card_stack2<br />
  CARD is only used when moving card(s) between 2 working stacks<br />
  and all cards until CARD is reached will be moved between them<br />
- </p>
-<dl class="section author"><dt>Author</dt><dd>Matejka Jiri (xmatej52) </dd></dl>
+ </p><dl class="section author"><dt>Author</dt><dd>Matejka Jiri (xmatej52) </dd></dl>
 
-<p>Definition at line <a class="el" href="Console_8hpp_source.html#l00036">36</a> of file <a class="el" href="Console_8hpp_source.html">Console.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Console_8hpp_source.html#l00037">37</a> of file <a class="el" href="Console_8hpp_source.html">Console.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aba16cfd9f0894eb1312b1bc1155b6646"></a>
 <div class="memitem">
@@ -176,7 +157,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Creates new console application. </p>
 
-<p>Definition at line <a class="el" href="Console_8hpp_source.html#l00071">71</a> of file <a class="el" href="Console_8hpp_source.html">Console.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Console_8hpp_source.html#l00072">72</a> of file <a class="el" href="Console_8hpp_source.html">Console.hpp</a>.</p>
 
 </div>
 </div>
@@ -231,7 +212,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Overloads output stream operator. </p>
 
-<p>Definition at line <a class="el" href="Console_8hpp_source.html#l00081">81</a> of file <a class="el" href="Console_8hpp_source.html">Console.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Console_8hpp_source.html#l00082">82</a> of file <a class="el" href="Console_8hpp_source.html">Console.hpp</a>.</p>
 
 </div>
 </div>
@@ -268,7 +249,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Overloads input stream operator. </p>
 
-<p>Definition at line <a class="el" href="Console_8hpp_source.html#l00089">89</a> of file <a class="el" href="Console_8hpp_source.html">Console.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Console_8hpp_source.html#l00090">90</a> of file <a class="el" href="Console_8hpp_source.html">Console.hpp</a>.</p>
 
 </div>
 </div>
