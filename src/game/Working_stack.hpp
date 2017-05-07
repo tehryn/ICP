@@ -8,6 +8,7 @@
 #include "Card_stack.hpp"
 
 /**
+ * @brief Class representing stack of card with multiple colors.
  * Class representing stack of card with multiple colors.
  * @author Matejka Jiri (xmatej52)
  */

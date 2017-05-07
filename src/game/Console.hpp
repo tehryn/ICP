@@ -10,7 +10,8 @@
 #include <iostream>
 
 /**
- * Class representing text inviroment of game. All commands can be entered by
+ * @brief Class representing text enviroment of game.
+ * Class representing text enviroment of game. All commands can be entered by
  * input stream operator. Class will load all commands until eof is reached. <br>
  * Usage of this class: <br>
  * Command [FILENAME] [ [ [ [ [ Card_stack1 ] FROM ] Card_stack2 TO ] CARD ] ]<br>
@@ -39,7 +40,7 @@ private:
 
     /// @var Variable representing invalid card.
     static Card err;
-    
+
     /**
      * Procces command and return, if command was valide. Most of parametrs
      * are optional. If function can decide what to move, function will do it.

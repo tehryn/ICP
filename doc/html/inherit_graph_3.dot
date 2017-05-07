@@ -1,0 +1,15 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Card_stack",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCard__stack.html"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Card_deck_hidden",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCard__deck__hidden.html"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Card_deck_visible",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCard__deck__visible.html"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Single_color_stack",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSingle__color__stack.html"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Working_stack",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classWorking__stack.html"];
+}

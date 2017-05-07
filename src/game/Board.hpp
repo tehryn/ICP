@@ -19,6 +19,7 @@
 
 
 /**
+ * @brief Class representing table with cards.
  * Class representing table with cards. Methods represents all possible moves,
  * player can do. <font color="red" ><b>DO NOT</b></font> use object of this class until you call method
  * new_game() or load_game(String filename).<br>
