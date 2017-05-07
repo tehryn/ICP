@@ -9,6 +9,10 @@
 #include "globals.hpp"
 #include "g_card.hpp"
 #include "g_stack.hpp"
+#include "Move.hpp"
+#include "Card.hpp"
+constexpr int GAME_WIDTH = 9 * CARD_WIDTH;
+constexpr int GAME_HEIGHT = 6 * CARD_HEIGHT;
 
 class G_Board : public QWidget
 {
@@ -42,12 +46,23 @@ private:
     int to_id;
     int from_id;
     G_Card * clicked;
+    Move hint_move = Move(ERR, 0, 0, Card(0, ERR), false);
+    bool was_hint = false;
 
     void readCards();
     void rebuild_stack(Stacks type, int id);
 
 public:
     G_Board(QWidget *parent = 0);
+
+    void new_game();
+    bool load_game(std::string filename);
+    bool save_game(std::string filename);
+    void undo();
+    void hint();
+    void unset_hint();
+    const char * hint_from_border = "border: 2px solid #0000FF";
+    const char * hint_to_border = "border: 2px solid #00FFFF";
 
     void clicked_working(int id, G_Card * gcard);
 

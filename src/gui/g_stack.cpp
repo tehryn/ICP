@@ -105,7 +105,10 @@ void G_Stack::set_border(const char *style, G_Card *gcard) {
     if (this->type == Working)
     {
         bool found = false;
-        for (int i = 0; i < stack.size(); i++) {
+        if (stack.size() == 1) {
+            stack[0]->setStyleSheet(style);
+        }
+        for (uint i = 0; i < stack.size(); i++) {
             if (stack[i]->card.is_visible() && gcard->card == stack[i]->card) {
                 found = true;
             }
@@ -118,6 +121,31 @@ void G_Stack::set_border(const char *style, G_Card *gcard) {
        if (!(this->type == Visible) || gcard->card.is_visible())
          gcard->setStyleSheet(style);
     }
+}
+
+void G_Stack::set_border(const char *style, Card card) {
+    G_Card * gcard = new G_Card(card, 0);
+    if (gcard == nullptr) return;
+    if (this->type == Working)
+    {
+        if (stack.size() == 1) {
+            stack[0]->setStyleSheet(style);
+        }
+        bool found = false;
+        for (uint i = 0; i < stack.size(); i++) {
+            if (stack[i]->card.is_visible() && gcard->card == stack[i]->card) {
+                found = true;
+            }
+            if (found) {
+                stack[i]->setStyleSheet(style);
+            }
+        }
+    }
+    else {
+       if (!(this->type == Visible) || gcard->card.is_visible())
+         gcard->setStyleSheet(style);
+    }
+    delete gcard;
 }
 
 void G_Stack::mousePressEvent(QMouseEvent *event) {
@@ -173,7 +201,6 @@ void G_Stack::mousePressEvent(QMouseEvent *event) {
 }
 void G_Stack::process_command() {
     this->board->process_command();
-    reset_globals();
 }
 
 

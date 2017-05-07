@@ -28,6 +28,7 @@ public:
     void set_id(int id);
     void set_type(Stacks type);
     void set_border(const char * style, G_Card * gcard);
+    void set_border(const char * style, Card card);
     std::string stack_identifier_to_str(Stacks type, int id) const;
 
     int size();
