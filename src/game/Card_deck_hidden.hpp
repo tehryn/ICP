@@ -8,6 +8,7 @@
 
 /**
  * @brief Class representing deck of hidden cards.
+ * 
  * Class representing deck of hidden cards. All methods and attributes are inherid.
  * @author Matejka Jiri (xmatej52)
  */

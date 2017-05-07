@@ -11,6 +11,7 @@
 
 /**
  * @brief Class representing text enviroment of game.
+ * 
  * Class representing text enviroment of game. All commands can be entered by
  * input stream operator. Class will load all commands until eof is reached. <br>
  * Usage of this class: <br>

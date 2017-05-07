@@ -9,6 +9,7 @@
 
 /**
  * @brief Class that holds history of moves.
+ * 
  * Class that holds history of moves.
  * @author Matejka Jiri (xmatej52)
  */

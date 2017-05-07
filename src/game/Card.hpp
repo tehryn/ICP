@@ -21,6 +21,7 @@ enum Color {
 
 /**
  * @brief Class representing Card.
+ * 
  * Class representing Card. Card has value, color and visibility. <br>
  * Value is from 0 to 13, where 0 represents invalid card. <br>
  * Colors are ERR, CLUBS, DIAMONDS, HEARTS and SPADES, where ERR represents

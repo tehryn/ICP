@@ -8,6 +8,7 @@
 
 /**
  * @brief Class representing deck of visible cards.
+ * 
  * Class representing deck of visible cards. All methods and attributes are inherid.
  * @author Matejka Jiri (xmatej52)
  */

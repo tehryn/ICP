@@ -15,6 +15,7 @@ enum {
 
 /**
  * @brief Class representing moves.
+ * 
  * Class representing moves. There are 8 possible moves:
  * WW  - Move between two working stacks.<br>
  * CC  - Move between two color stacks.<br>
