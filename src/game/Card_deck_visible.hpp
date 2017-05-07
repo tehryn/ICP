@@ -7,7 +7,8 @@
 #include "Card_stack.hpp"
 
 /**
- * Class representing deck of visible cards
+ * @brief Class representing deck of visible cards.
+ * Class representing deck of visible cards. All methods and attributes are inherid.
  * @author Matejka Jiri (xmatej52)
  */
 class Card_deck_visible: public Card_stack {};

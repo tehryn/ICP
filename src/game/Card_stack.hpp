@@ -11,6 +11,7 @@
 #include <ctime>
 
 /**
+ * @brief Base class of multiple classes.
  * Base class of Card_deck_visible, Card_deck_hidden, Working_stack and
  * Single_color_stack. Used as very advanced stack of cards.
  * @author Matejka Jiri (xmatej52)

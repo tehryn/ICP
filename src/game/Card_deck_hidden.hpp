@@ -7,7 +7,8 @@
 #include "Card_stack.hpp"
 
 /**
- * Class representing deck of hidden cards.
+ * @brief Class representing deck of hidden cards.
+ * Class representing deck of hidden cards. All methods and attributes are inherid.
  * @author Matejka Jiri (xmatej52)
  */
 class Card_deck_hidden: public Card_stack {};
