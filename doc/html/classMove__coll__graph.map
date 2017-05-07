@@ -1,3 +1,3 @@
 <map id="Move" name="Move">
-<area shape="rect" id="node2" href="$classCard.html" title="Card" alt="" coords="7,5,57,35"/>
+<area shape="rect" id="node2" href="$classCard.html" title="Class representing Card. Class representing Card. Card has value, color and visibility. &#160;&#160;Value is from 0 to 13, where 0 represents invalid card. &#160;&#160;Colors are ERR, CLUBS, DIAMONDS, HEARTS and SPADES, where ERR represents invalid card. &#160;&#160;Visibility tells if card with its face up or not. Has values true and false. &#160;&#160;For checking validity of card, please use always color and looks for value ERR. " alt="" coords="7,5,57,35"/>
 </map>

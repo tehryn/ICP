@@ -96,49 +96,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classConsole.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="classConsole.html">Console</a> {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classBoard.html">Board</a> game;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">static</span> <a class="code" href="classCard.html">Card</a> err;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">bool</span> command(std::string cmd1, std::string cmd2, <span class="keywordtype">unsigned</span> from, std::string cmd3, <span class="keywordtype">unsigned</span> to, <a class="code" href="classCard.html">Card</a> card);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">bool</span> string_to_command(std::string str);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classConsole.html#aba16cfd9f0894eb1312b1bc1155b6646">   70</a></span>&#160;    <a class="code" href="classConsole.html#aba16cfd9f0894eb1312b1bc1155b6646">Console</a>() {}</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classConsole.html#a93bc2aaf049d20743ab8cca114274e85">help</a>();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classConsole.html#a754083ce2fc7f8a7e22e1464e981742a">   80</a></span>&#160;    <span class="keyword">friend</span> std::ostream&amp; <a class="code" href="classConsole.html#a754083ce2fc7f8a7e22e1464e981742a">operator &lt;&lt; </a>(std::ostream&amp; stream, <span class="keyword">const</span> <a class="code" href="classConsole.html">Console</a>&amp; console) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        stream &lt;&lt; console.game;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> stream;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classConsole.html#a0c10d652f894543a426788cde1fad4ac">   88</a></span>&#160;    <span class="keyword">friend</span> std::istream&amp; <a class="code" href="classConsole.html#a0c10d652f894543a426788cde1fad4ac">operator &gt;&gt; </a>(std::istream&amp; stream, <a class="code" href="classConsole.html">Console</a>&amp; console) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        std::string line;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">while</span>(!stream.eof()) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            getline(stream, line);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">if</span> (!console.string_to_command(line)) {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="keywordflow">if</span> (line != <span class="stringliteral">&quot;&quot;</span>) {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                    std::cerr &lt;&lt; <span class="stringliteral">&quot;Invalid move or command &#39;&quot;</span> &lt;&lt; line &lt;&lt; <span class="stringliteral">&quot;&#39;\n&quot;</span>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">return</span> stream;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;};</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="classConsole_html"><div class="ttname"><a href="classConsole.html">Console</a></div><div class="ttdef"><b>Definition:</b> <a href="Console_8hpp_source.html#l00035">Console.hpp:35</a></div></div>
-<div class="ttc" id="classBoard_html"><div class="ttname"><a href="classBoard.html">Board</a></div><div class="ttdef"><b>Definition:</b> <a href="Board_8hpp_source.html#l00031">Board.hpp:31</a></div></div>
-<div class="ttc" id="classConsole_html_aba16cfd9f0894eb1312b1bc1155b6646"><div class="ttname"><a href="classConsole.html#aba16cfd9f0894eb1312b1bc1155b6646">Console::Console</a></div><div class="ttdeci">Console()</div><div class="ttdef"><b>Definition:</b> <a href="Console_8hpp_source.html#l00070">Console.hpp:70</a></div></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classConsole.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="classConsole.html">Console</a> {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classBoard.html">Board</a> game;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">static</span> <a class="code" href="classCard.html">Card</a> err;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">bool</span> command(std::string cmd1, std::string cmd2, <span class="keywordtype">unsigned</span> from, std::string cmd3, <span class="keywordtype">unsigned</span> to, <a class="code" href="classCard.html">Card</a> card);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">bool</span> string_to_command(std::string str);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classConsole.html#aba16cfd9f0894eb1312b1bc1155b6646">   71</a></span>&#160;    <a class="code" href="classConsole.html#aba16cfd9f0894eb1312b1bc1155b6646">Console</a>() {}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classConsole.html#a93bc2aaf049d20743ab8cca114274e85">help</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classConsole.html#a754083ce2fc7f8a7e22e1464e981742a">   81</a></span>&#160;    <span class="keyword">friend</span> std::ostream&amp; <a class="code" href="classConsole.html#a754083ce2fc7f8a7e22e1464e981742a">operator &lt;&lt; </a>(std::ostream&amp; stream, <span class="keyword">const</span> <a class="code" href="classConsole.html">Console</a>&amp; console) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        stream &lt;&lt; console.game;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">return</span> stream;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classConsole.html#a0c10d652f894543a426788cde1fad4ac">   89</a></span>&#160;    <span class="keyword">friend</span> std::istream&amp; <a class="code" href="classConsole.html#a0c10d652f894543a426788cde1fad4ac">operator &gt;&gt; </a>(std::istream&amp; stream, <a class="code" href="classConsole.html">Console</a>&amp; console) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        std::string line;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">while</span>(!stream.eof()) {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            getline(stream, line);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">if</span> (!console.string_to_command(line)) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keywordflow">if</span> (line != <span class="stringliteral">&quot;&quot;</span>) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                    std::cerr &lt;&lt; <span class="stringliteral">&quot;Invalid move or command &#39;&quot;</span> &lt;&lt; line &lt;&lt; <span class="stringliteral">&quot;&#39;\n&quot;</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">return</span> stream;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;};</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classConsole_html"><div class="ttname"><a href="classConsole.html">Console</a></div><div class="ttdoc">Class representing text enviroment of game. Class representing text enviroment of game...</div><div class="ttdef"><b>Definition:</b> <a href="Console_8hpp_source.html#l00036">Console.hpp:36</a></div></div>
+<div class="ttc" id="classBoard_html"><div class="ttname"><a href="classBoard.html">Board</a></div><div class="ttdoc">Class representing table with cards. Class representing table with cards. Methods represents all poss...</div><div class="ttdef"><b>Definition:</b> <a href="Board_8hpp_source.html#l00032">Board.hpp:32</a></div></div>
+<div class="ttc" id="classConsole_html_aba16cfd9f0894eb1312b1bc1155b6646"><div class="ttname"><a href="classConsole.html#aba16cfd9f0894eb1312b1bc1155b6646">Console::Console</a></div><div class="ttdeci">Console()</div><div class="ttdef"><b>Definition:</b> <a href="Console_8hpp_source.html#l00071">Console.hpp:71</a></div></div>
 <div class="ttc" id="Board_8hpp_html"><div class="ttname"><a href="Board_8hpp.html">Board.hpp</a></div></div>
-<div class="ttc" id="classConsole_html_a0c10d652f894543a426788cde1fad4ac"><div class="ttname"><a href="classConsole.html#a0c10d652f894543a426788cde1fad4ac">Console::operator&gt;&gt;</a></div><div class="ttdeci">friend std::istream &amp; operator&gt;&gt;(std::istream &amp;stream, Console &amp;console)</div><div class="ttdef"><b>Definition:</b> <a href="Console_8hpp_source.html#l00088">Console.hpp:88</a></div></div>
-<div class="ttc" id="classConsole_html_a754083ce2fc7f8a7e22e1464e981742a"><div class="ttname"><a href="classConsole.html#a754083ce2fc7f8a7e22e1464e981742a">Console::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;stream, const Console &amp;console)</div><div class="ttdef"><b>Definition:</b> <a href="Console_8hpp_source.html#l00080">Console.hpp:80</a></div></div>
-<div class="ttc" id="classCard_html"><div class="ttname"><a href="classCard.html">Card</a></div><div class="ttdef"><b>Definition:</b> <a href="Card_8hpp_source.html#l00031">Card.hpp:31</a></div></div>
+<div class="ttc" id="classConsole_html_a0c10d652f894543a426788cde1fad4ac"><div class="ttname"><a href="classConsole.html#a0c10d652f894543a426788cde1fad4ac">Console::operator&gt;&gt;</a></div><div class="ttdeci">friend std::istream &amp; operator&gt;&gt;(std::istream &amp;stream, Console &amp;console)</div><div class="ttdef"><b>Definition:</b> <a href="Console_8hpp_source.html#l00089">Console.hpp:89</a></div></div>
+<div class="ttc" id="classConsole_html_a754083ce2fc7f8a7e22e1464e981742a"><div class="ttname"><a href="classConsole.html#a754083ce2fc7f8a7e22e1464e981742a">Console::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;stream, const Console &amp;console)</div><div class="ttdef"><b>Definition:</b> <a href="Console_8hpp_source.html#l00081">Console.hpp:81</a></div></div>
+<div class="ttc" id="classCard_html"><div class="ttname"><a href="classCard.html">Card</a></div><div class="ttdoc">Class representing Card. Class representing Card. Card has value, color and visibility.   Value is from 0 to 13, where 0 represents invalid card.   Colors are ERR, CLUBS, DIAMONDS, HEARTS and SPADES, where ERR represents invalid card.   Visibility tells if card with its face up or not. Has values true and false.   For checking validity of card, please use always color and looks for value ERR. </div><div class="ttdef"><b>Definition:</b> <a href="Card_8hpp_source.html#l00032">Card.hpp:32</a></div></div>
 <div class="ttc" id="Card_8hpp_html"><div class="ttname"><a href="Card_8hpp.html">Card.hpp</a></div></div>
 <div class="ttc" id="classConsole_html_a93bc2aaf049d20743ab8cca114274e85"><div class="ttname"><a href="classConsole.html#a93bc2aaf049d20743ab8cca114274e85">Console::help</a></div><div class="ttdeci">void help()</div></div>
 </div><!-- fragment --></div><!-- contents -->

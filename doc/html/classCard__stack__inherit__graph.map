@@ -1,6 +1,6 @@
 <map id="Card_stack" name="Card_stack">
-<area shape="rect" id="node3" href="$classCard__deck__hidden.html" title="Card_deck_hidden" alt="" coords="5,83,136,112"/>
-<area shape="rect" id="node5" href="$classCard__deck__visible.html" title="Card_deck_visible" alt="" coords="160,83,288,112"/>
-<area shape="rect" id="node7" href="$classSingle__color__stack.html" title="Single_color_stack" alt="" coords="312,83,443,112"/>
-<area shape="rect" id="node9" href="$classWorking__stack.html" title="Working_stack" alt="" coords="467,83,576,112"/>
+<area shape="rect" id="node3" href="$classCard__deck__hidden.html" title="Class representing deck of hidden cards. Class representing deck of hidden cards. All methods and att..." alt="" coords="5,83,136,112"/>
+<area shape="rect" id="node5" href="$classCard__deck__visible.html" title="Class representing deck of visible cards. Class representing deck of visible cards. All methods and attributes are inherid. " alt="" coords="160,83,288,112"/>
+<area shape="rect" id="node7" href="$classSingle__color__stack.html" title="Class representing stack with one color. Class representing stack of color cards with same color..." alt="" coords="312,83,443,112"/>
+<area shape="rect" id="node9" href="$classWorking__stack.html" title="Class representing stack of card with multiple colors. Class representing stack of card with multiple..." alt="" coords="467,83,576,112"/>
 </map>
