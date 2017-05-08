@@ -4,8 +4,8 @@
 #include <QLabel>
 #include "../game/Card.hpp"
 
-constexpr int CARD_WIDTH_ORIGIN = 120
-constexpr int CARD_HEIGHT_ORIGIN = 174
+constexpr int CARD_WIDTH_ORIGIN = 120;
+constexpr int CARD_HEIGHT_ORIGIN = 174;
 
 constexpr int CARD_WIDTH = CARD_WIDTH_ORIGIN/2;
 constexpr int CARD_HEIGHT = ((CARD_HEIGHT_ORIGIN) * (CARD_WIDTH)) / (CARD_WIDTH_ORIGIN);
