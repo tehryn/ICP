@@ -18,11 +18,13 @@ G_Card::G_Card(Card card, QWidget *parent)
     std::string localpath = "../lib/cards/";
     std::string localpath2 = "./lib/cards/";
 
-    if (card.is_error_card()) {
+    if (card.is_error_card())
+    {
         localpath += "empty.png";
         localpath2 += "empty.png";
     }
-    else if (!card.is_visible()) {
+    else if (!card.is_visible())
+    {
         localpath += "back.png";
         localpath2 += "back.png";
     }
@@ -35,13 +37,12 @@ G_Card::G_Card(Card card, QWidget *parent)
         localpath2 += std::to_string(card.get_value());
         localpath2 += ".png";
     }
-    if (!does_file_exist(localpath)) {
+    if (!does_file_exist(localpath))
+    {
         localpath = localpath2;
-        if (!does_file_exist(localpath)) {
+        if (!does_file_exist(localpath))
             std::cerr << "Pictrues of cards not found!!!" << std::endl;
-        }
     }
-
 
     picture.load(localpath.c_str());
     setParent(parent);
