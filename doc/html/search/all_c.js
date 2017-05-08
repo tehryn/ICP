@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['solitaire_20game_2c_20project_20to_20icp_202017',['Solitaire game, project to ICP 2017',['../index.html',1,'']]],
   ['save_5fgame',['save_game',['../classBoard.html#af57837475a7f0c2093f04e1a45c64198',1,'Board::save_game()'],['../classG__Board.html#afdfbf421e763dd52d90f4d36b9bb1582',1,'G_Board::save_game()']]],
   ['set_5fboard',['set_board',['../classG__Stack.html#ada18597b4fe03b22eee57006325df9db',1,'G_Stack']]],
   ['set_5fborder',['set_border',['../classG__Stack.html#ae65550bf65254aaabefb301152adade7',1,'G_Stack::set_border(const char *style, G_Card *gcard)'],['../classG__Stack.html#a40cbf2071cbf9cfcb93b7452f1328863',1,'G_Stack::set_border(const char *style, Card card)']]],
