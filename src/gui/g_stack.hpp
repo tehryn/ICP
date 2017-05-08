@@ -21,7 +21,7 @@ private:
     /// Vector of graphical cards
     std::vector<G_Card*> stack;
     /// Y axis shift down
-    int positionY = 0;
+    uint positionY = 0;
     /// Pointer to Board, because of calling Board functions
     G_Board * board = nullptr;
     /// Type of this stack
@@ -34,7 +34,7 @@ private:
      * @param  y Y position
      * @return   Graphical card
      */
-    G_Card* find_card(int y);
+    G_Card* find_card(uint y);
 
     /**
      * Calls Border's funkction 'process_command'
@@ -51,7 +51,7 @@ public:
      * Sets Y axis shift down
      * @param positionY Axis shift
      */
-    void set_positionY(int positionY);
+    void set_positionY(uint positionY);
 
     /**
      * Sets Board pointer.
@@ -106,8 +106,8 @@ public:
     G_Card* top();
 
     /**
-     * [push description]
-     * @param card [description]
+     * Remove top card of stack.
+     * @param card Card to remove
      */
     void push(Card card);
     G_Card* pop();
