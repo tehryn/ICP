@@ -11,7 +11,7 @@
 
 /**
  * @brief Class representing text enviroment of game.
- * 
+ *
  * Class representing text enviroment of game. All commands can be entered by
  * input stream operator. Class will load all commands until eof is reached. <br>
  * Usage of this class: <br>
@@ -67,9 +67,12 @@ private:
 public:
 
     /**
-     * Creates new console application.
+     * Creates new console application. Prints welcome message.
      */
-    Console() {}
+    Console() {
+        std::cout << "Dear user, welcome to Solitaire console game." << std::endl;
+        std::cout << "For list of commands, please type \"help\"" << std::endl;
+    }
 
     /**
      * Prints help on stdout.

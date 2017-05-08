@@ -31,6 +31,7 @@ Main_Window::Main_Window(QWidget *parent) : QMainWindow(parent)
 Main_Window::~Main_Window() {
     delete game_menu;
 }
+
 void Main_Window::createActions() {
     new1 = new QAction(tr("&Game slot 1"), this);
     new1->setShortcuts(QKeySequence::New);
@@ -124,6 +125,7 @@ void Main_Window::createActions() {
 
     Exit = new QAction(tr("&Exit"), this);
     Exit->setShortcut(QKeySequence::Copy);
+    connect(Exit, &QAction::triggered, this, &Main_Window::exit_game);
 }
 
 void Main_Window::createMenus() {
@@ -305,7 +307,9 @@ void Main_Window::leave_game4() {
     set_window();
 }
 
-void Main_Window::exit_game() {}
+void Main_Window::exit_game() {
+    close();
+}
 
 void Main_Window::set_window() {
     if (plays[1] || plays[2] || plays[3]) {
