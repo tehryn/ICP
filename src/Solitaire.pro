@@ -12,6 +12,8 @@ TARGET = gui
 TEMPLATE = app
 QMAKE_CXXFLAGS += -std=c++11 -DBUILDGUI
 
+DESTDIR = ../build
+
 SOURCES += main/main.cpp\
         gui/g_board.cpp \
     game/Board.cpp \
@@ -20,7 +22,7 @@ SOURCES += main/main.cpp\
     game/Single_color_stack.cpp \
     game/Working_stack.cpp \
     gui/g_card.cpp \
-    game/g_stack.cpp \
+    gui/g_stack.cpp \
     gui/main_window.cpp
 
 HEADERS  += gui/g_board.hpp \
