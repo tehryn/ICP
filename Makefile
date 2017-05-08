@@ -1,6 +1,6 @@
 
 CC=g++
-OFLAGS=-c -Wall -Wextra -pedantic -g -std=c++11
+OFLAGS=-c -Wall -Wextra -pedantic -g -std=c++11 -O2
 CFLAGS=-std=c++11
 OBJDIR=build
 SRCDIR=src/game/
@@ -46,7 +46,7 @@ build/hra2017-cli.o : $(MAIN)
 
 .PHONY: clean doxygen pack
 pack:
-	
+
 clean:
 	rm -r -f src/hra2017-cli src/hra2017 doc/html build/hra2017-cli.o
 	(${MAKE} -C src clean || true)
