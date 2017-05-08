@@ -155,7 +155,7 @@ void G_Board::process_command()
             if (to_type == Single_Color)
             {
                 if (!game.fromV_toC(to_id))
-                   std::cerr << "Unsuccessful command." << std::endl;
+                   {}//std::cerr << "Unsuccessful command." << std::endl;
                 else
                 {
                     rebuild_stack(Visible, 0);
@@ -165,7 +165,7 @@ void G_Board::process_command()
             else if (to_type == Working)
             {
                 if (!game.fromV_toW(to_id))
-                    std::cerr << "Unsuccessful command." << std::endl;
+                    {}//std::cerr << "Unsuccessful command." << std::endl;
                 else
                 {
                     rebuild_stack(Visible, 0);
@@ -173,7 +173,7 @@ void G_Board::process_command()
                 }
             }
             else
-                std::cerr << "Unknown command." << std::endl;
+                {}//std::cerr << "Unknown command." << std::endl;
             break;
 
         case Single_Color:
@@ -181,7 +181,7 @@ void G_Board::process_command()
             if (to_type == Single_Color)
             {
                 if (!game.fromC_toC(from_id, to_id))
-                    std::cerr << "Unsuccessful command." << std::endl;
+                    {}//std::cerr << "Unsuccessful command." << std::endl;
                 else
                 {
                     rebuild_stack(Single_Color, from_id);
@@ -191,7 +191,7 @@ void G_Board::process_command()
             else if (to_type == Working)
             {
                 if (!game.fromC_toW(from_id, to_id))
-                    std::cerr << "Unsuccessful command." << std::endl;
+                    {}//std::cerr << "Unsuccessful command." << std::endl;
                 else
                 {
                     rebuild_stack(Single_Color, from_id);
@@ -199,7 +199,7 @@ void G_Board::process_command()
                 }
             }
             else
-                std::cerr << "Unknown command." << std::endl;
+                {}//std::cerr << "Unknown command." << std::endl;
             break;
 
         case Working:
@@ -207,7 +207,7 @@ void G_Board::process_command()
             if (to_type == Single_Color)
             {
                 if (!game.fromW_toC(from_id, to_id))
-                    std::cerr << "Unsuccessful command." << std::endl;
+                    {}//std::cerr << "Unsuccessful command." << std::endl;
                 else
                 {
                     rebuild_stack(Working, from_id);
@@ -217,7 +217,7 @@ void G_Board::process_command()
             else if (to_type == Working)
             {
                 if (!game.fromW_toW(from_id, to_id, clicked->card))
-                    std::cerr << "Unsuccessful command." << std::endl;
+                    {}//std::cerr << "Unsuccessful command." << std::endl;
                 else
                 {
                     rebuild_stack(Working, from_id);
@@ -225,7 +225,7 @@ void G_Board::process_command()
                 }
             }
             else
-                std::cerr << "Unknown command." << std::endl;
+                {}//std::cerr << "Unknown command." << std::endl;
             break;
 
         default:
