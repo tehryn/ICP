@@ -5,10 +5,10 @@ Loginy autorů: xmatej52, xmisov00.
 
 
 Popis hry:
-Po spuštění aplikace pomocí příkazu "ant run" nebo spuštěním z
+Po spuštění aplikace pomocí příkazu "make run" nebo spuštěním z
 adresáře projektu (složka xmatej52) se otevře prázdné zelené okno.
 V menu je možnost vybrat, kterou hru chcete začít hrát, pokud hrajete pouze
-jednu hru, doporučuje se game slot 1.
+jednu hru, doporučuje se game slot 1. Hra se ovládá klikáním na jednotlivé karty. 
 
 New game:
 Značí vytvoření nové hry,
