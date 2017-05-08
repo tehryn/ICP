@@ -15,7 +15,7 @@ G_Card::G_Card(Card card, QWidget *parent)
     this->parent_widget = parent;
     this->card = card;
 
-    std::string localpath = "./cards120px/";
+    std::string localpath = "./cards/";
 
     if (card.is_error_card())
         localpath += "empty.png";

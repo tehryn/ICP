@@ -3,14 +3,14 @@
 
 #include <QMainWindow>
 #include <QMenuBar>
-
 #include <QGridLayout>
 #include <QActionGroup>
 #include <QObject>
 #include <QKeySequence>
 #include <QMessageBox>
 #include <QFileDialog>
-#include "g_board.hpp"
+
+#include "../gui/g_board.hpp"
 constexpr int WINDOW_WIDTH = GAME_WIDTH*2+20;
 constexpr int WINDOW_HEIGHT = GAME_HEIGHT*2+20;
 

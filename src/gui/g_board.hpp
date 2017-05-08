@@ -1,3 +1,7 @@
+/** @file
+ *  Header file for class G_Board.
+ *  @author Misova Miroslava (xmisov00)
+ */
 #ifndef G_BOARD_HPP
 #define G_BOARD_HPP
 
@@ -5,12 +9,14 @@
 #include <QLayout>
 #include <QLabel>
 
-#include "Board.hpp"
-#include "globals.hpp"
-#include "g_card.hpp"
-#include "g_stack.hpp"
-#include "Move.hpp"
-#include "Card.hpp"
+#include "../game/Board.hpp"
+#include "../gui/globals.hpp"
+#include "../gui/g_card.hpp"
+#include "../gui/g_stack.hpp"
+#include "../game/Move.hpp"
+#include "../game/Card.hpp"
+
+/// @var GAME_WIDTH Variable representing width of one game board
 constexpr int GAME_WIDTH = 9 * CARD_WIDTH;
 constexpr int GAME_HEIGHT = 6 * CARD_HEIGHT;
 

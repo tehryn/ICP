@@ -4,7 +4,7 @@
 #include <QWidget>
 #include <QMouseEvent>
 #include <vector>
-#include "globals.hpp"
+#include "../gui/globals.hpp"
 
 class G_Board;
 
