@@ -25,6 +25,8 @@ constexpr int WINDOW_HEIGHT = GAME_HEIGHT*2+20;
  *
  * Class representing main windows of application. Holds implementation of menus
  * a control of maximum 4 games.
+ *
+ * @author Matejka Jiri (xmatej52)
  */
 class Main_Window : public QMainWindow
 {
