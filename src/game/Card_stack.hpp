@@ -12,16 +12,19 @@
 
 /**
  * @brief Base class of multiple classes.
- * 
+ *
  * Base class of Card_deck_visible, Card_deck_hidden, Working_stack and
  * Single_color_stack. Used as very advanced stack of cards.
  * @author Matejka Jiri (xmatej52)
  */
 class Card_stack {
 protected:
+
     /// @var Vector of cards in class.
     std::vector<Card> stack;
+    
 public:
+
     /**
      * Constructor of class
      * @return New Card stack with no cards.

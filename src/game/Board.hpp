@@ -20,7 +20,7 @@
 
 /**
  * @brief Class representing table with cards.
- * 
+ *
  * Class representing table with cards. Methods represents all possible moves,
  * player can do. <font color="red" ><b>DO NOT</b></font> use object of this class until you call method
  * new_game() or load_game(String filename).<br>
@@ -86,9 +86,9 @@ public:
     Board() {}
 
     /**
-    * Creates new game. If there was previous game, all cards will be removed,
-    * and new cards will be dealt.
-    */
+     * Creates new game. If there was previous game, all cards will be removed,
+     * and new cards will be dealt.
+     */
     void new_game();
 
     /**
@@ -114,51 +114,53 @@ public:
     /**
      * Moves card(s) between two working packs. Moves all cards until specific
      * card is reached. When false was returned, no changes were made.
-     * @param  from From wich pack cards will be taken.
+     * @param  from From which pack cards will be taken.
      * @param  to   To which pack cards will be added.
      * @param  card Specific card used as a guard.
-     * @return      True on succes, False on invalid operation.
+     * @return      True on success, False on invalid operation.
      */
     bool fromW_toW(unsigned from, unsigned to, Card card);
 
     /**
-     * Moves card between two color packs. Only ace can be moved. When false is
+     * Moves card between two colour packs. Only ace can be moved. When false is
      * returned, no changes were made.
      * @param  from From which pack card will be taken.
      * @param  to   To which pack card will be added.
-     * @return      True on succes, False on invalid operation.
+     * @return      True on success, False on invalid operation.
      */
     bool fromC_toC(unsigned from, unsigned to);
 
     /**
-     * Moves card from Working pack to Color pack. When false is returned, no
+     * Moves card from working pack to colour pack. When false is returned, no
      * changes were made.
      * @param  from From which pack card will be taken.
      * @param  to   To which pack card will be added.
-     * @return      True on succes, false on invalid operation.
+     * @return      True on success, false on invalid operation.
      */
     bool fromW_toC(unsigned from, unsigned to);
 
     /**
-     * Moves card from color pack to working pack. When false is returned, no
+     * Moves card from colour pack to working pack. When false is returned, no
      * changes were made.
      * @param  from From which pack card will be taken.
      * @param  to   To which pack card will be added.
-     * @return      True on succes, false on invalid operation.
+     * @return      True on success, false on invalid operation.
      */
     bool fromC_toW(unsigned from, unsigned to);
 
     /**
-     * Moves card from visible deck to specific color stack.
-     * @param  to ID of color stack.
-     * @return    True on succes, false on invalid operation.
+     * Represents move from visible deck to colour stack. Pops card from visible
+     * deck and pushes it into specific colour stack.
+     * @param  to ID of colour stack where card will be pushed.
+     * @return    True on success otherwise false.
      */
     bool fromV_toC(unsigned to);
 
     /**
-     * Moves card from Visible deck to specific color stack.
-     * @param  to ID of color stack.
-     * @return    True on succes, false on invalid operation.
+     * Represents move from visible deck to working stack. Pops card from visible
+     * deck and pushes it into specific working stack.
+     * @param  to ID of working stack where card will be pushed.
+     * @return    True on success otherwise false.
      */
     bool fromV_toW(unsigned to);
 
@@ -170,8 +172,9 @@ public:
     void fromH_toV();
 
     /**
-     * Undo operation. Can be used multipe times. If game is loaded, undo cannot
+     * Undo operation. Can be used multiple times. If game is loaded, undo cannot
      * be done to states of game that was before saving.
+     * @return Move that was undone.
      */
     Move undo();
 
@@ -184,7 +187,7 @@ public:
     Move help();
 
     /**
-     * Overload output stream operator.
+     * Overloads output stream operator.
      */
     friend std::ostream& operator << (std::ostream& stream, Board board) {
         for (unsigned i = 0; i < 7 ; i++) {
@@ -205,7 +208,7 @@ public:
      * Retrieve specific card from working stack
      * @param  id  ID of working stack.
      * @param  idx Index of card in working stack.
-     * @return     Card from index on succes, otherwise returns invalid card
+     * @return     Card from index on success, otherwise returns invalid card
      *             (Color is set to ERR).
      */
     Card get_working_stack(unsigned id, unsigned idx) {
@@ -219,10 +222,10 @@ public:
     }
 
     /**
-     * Retrieve specific card from color stack
-     * @param  id  ID of color stack.
-     * @param  idx Index of card in color stack.
-     * @return     Card from index on succes, otherwise returns invalid card
+     * Retrieve specific card from colour stack
+     * @param  id  ID of colour stack.
+     * @param  idx Index of card in colour stack.
+     * @return     Card from index on success, otherwise returns invalid card
      *             (Color is set to ERR).
      */
     Card get_color_stack(unsigned id, unsigned idx) {
@@ -238,7 +241,7 @@ public:
     /**
      * Retrieve card from hidden deck.
      * @param  idx Index of card in deck.
-     * @return     Card from index on succes, otherwise returns invalid card
+     * @return     Card from index on success, otherwise returns invalid card
      *             (Color is set to ERR).
      */
      Card get_hidden_deck(unsigned idx) {
@@ -248,7 +251,7 @@ public:
     /**
      * Retrieve card from visible deck.
      * @param  idx Index of card in deck.
-     * @return     Card from index on succes, otherwise returns invalid card
+     * @return     Card from index on success, otherwise returns invalid card
      *             (Color is set to ERR).
      */
     Card get_visible_deck(unsigned idx) {
@@ -257,7 +260,7 @@ public:
 
     /**
      * Retrieve score of game.
-     * @return value of scor.
+     * @return value of score.
      */
     unsigned get_score() {
         return score;
