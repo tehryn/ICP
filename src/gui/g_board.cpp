@@ -353,7 +353,7 @@ void G_Board::clicked_working(int id, G_Card *gcard)
     }
     else
     {
-        if (gcard != nullptr && !gcard->card.is_error_card())
+        if (gcard != nullptr && gcard->card.is_visible())
         {
             from_id = id;
             from_type = Working;

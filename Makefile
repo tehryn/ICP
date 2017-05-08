@@ -48,8 +48,9 @@ build/hra2017-cli.o : $(MAIN)
 pack:
 	
 clean:
-	${MAKE} -C src clean
-	rm -rf src/hra2017-cli src/hra2017 src/Makefile doc/html build/hra2017-cli.o
+	rm -r -f src/hra2017-cli src/hra2017 doc/html build/hra2017-cli.o
+	(${MAKE} -C src clean || true)
+	rm -f src/Makefile
 doxygen:
 	doxygen doc/Doxyfile
 run:
