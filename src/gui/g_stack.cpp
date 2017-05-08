@@ -1,3 +1,10 @@
+/*
+ * Author: Misova Miroslava, Matejka Jiri
+ * login:  xmisov00, xmatej52
+ * school: VUT FIT
+ * date:   22. 4. 2017
+ */
+
 #include "g_stack.hpp"
 #include "g_board.hpp"
 

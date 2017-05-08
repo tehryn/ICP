@@ -1,3 +1,10 @@
+/*
+ * Author: Misova Miroslava
+ * login:  xmisov00
+ * school: VUT FIT
+ * date:   22. 4. 2017
+ */
+
 #ifndef GLOBALS_HPP
 #define GLOBALS_HPP
 #include "g_card.hpp"

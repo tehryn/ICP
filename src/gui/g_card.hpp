@@ -1,3 +1,8 @@
+/** @file
+ *  Header file for class G_Card.
+ *  @author Misova Miroslava (xmisov00), Matejka Jiri (xmatej52)
+ */
+
 #ifndef G_CARD_H
 #define G_CARD_H
 
@@ -25,7 +30,7 @@ public:
     Card card;
     /// @var Picture of card
     QPixmap picture;
-    
+
     /**
      * Constructor.
      * @param card Logical card
