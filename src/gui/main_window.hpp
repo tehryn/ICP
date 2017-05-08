@@ -1,8 +1,6 @@
-/*
- * Author: Matejka Jiri
- * login:  xmatej52
- * school: VUT FIT
- * date:   8. 5. 2017
+/** @file
+ *  Header file for class G_Board.
+ *  @author Matejka Jiri (xmatej52)
  */
 #ifndef MAIN_WINDOW_H
 #define MAIN_WINDOW_H
