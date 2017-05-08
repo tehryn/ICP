@@ -8,11 +8,11 @@
 
 bool Single_color_stack::push(Card card) {
     if (this->size() == 0) {
-        if (card.get_value() != 1) {
+        if (card.get_value() != 1) { // only Ace can be moved on empty color stack
             return false;
         }
         else {
-            this->color = card.get_color();
+            this->color = card.get_color(); // change color of stack
             this->force_push(card);
             return true;
         }

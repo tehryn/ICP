@@ -8,6 +8,7 @@
 
 Card_stack Card_stack::new_deck() {
     Card_stack deck;
+    // creates all cards...
     for (int i = 1; i <= 13; i++) {
         deck.force_push(Card(i, DIAMONDS));
         deck.force_push(Card(i, SPADES));

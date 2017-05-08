@@ -7,8 +7,9 @@
 #include "Board.hpp"
 
 void Board::new_game() {
-    clear();
+    clear(); // deletes all cards from game
     Card_stack pack_of_cards = Card_stack::new_deck();
+    // fill working stacks
     for (int i = 0; i < 7; i++) {
         for (int j = 0; j < i + 1; j++) {
             working_stacks[i].force_push(pack_of_cards.pop_random());
@@ -16,6 +17,7 @@ void Board::new_game() {
         working_stacks[i].set_top_visible();
     }
     Card tmp = pack_of_cards.pop_random();
+    // fill hidden deck
     while (tmp.get_color() != ERR) {
         hidden_deck.force_push(tmp);
         tmp = pack_of_cards.pop_random();
@@ -45,7 +47,7 @@ bool Board::save_game(std::string filename) {
 }
 
 bool Board::load_game(std::string filename) {
-    clear();
+    clear(); // deletes all cards
     std::fstream in(filename, std::fstream::in);
     if (!in.is_open()) {
         return false;
@@ -53,9 +55,11 @@ bool Board::load_game(std::string filename) {
     std::string line;
     int lines = 0;
     size_t size;
+    // loads content
     while (!in.eof()) {
-        getline(in, line);
+        getline(in, line); // reads line
         if (lines == 13) {
+            // reads score from file, if not number return false.
             try {
                 score = stoi(line);
                 in.close();
@@ -66,6 +70,7 @@ bool Board::load_game(std::string filename) {
                 return false;
             }
         }
+        // empty deck/stack
         if (line == "") {
             lines++;
             continue;
@@ -73,27 +78,38 @@ bool Board::load_game(std::string filename) {
         size = line.size();
         Card card;
         std::string c = "";
+        // fill deck/stack with cards
         for(unsigned i = 0; i < size; i++) {
+            // check if there is card
             if ((i + 4) >= size || line[i+1] != '(' || line[i+3] != ')' || (line[i+4] != 'F' && line[i+4] != 'T')) {
                 in.close();
                 clear();
                 return false;
             }
+            // gets card into string
             if (line[i] == 'L') {
                 c = "10" + line.substr(i+1, 3);
             }
             else {
                 c = line.substr(i, 4);
             }
+
+            // convert string to card
             card = Card::string_to_card(c);
+
+            // check if its valide card
             if (card.is_error_card()) {
                 in.close();
                 clear();
                 return false;
             }
+
+            // retrieve visibility
             if (line[i+4] == 'F') {
                 card.make_hidden();
             }
+
+            // adds card into corret stack/deck
             if (lines < 7) {
                 this->working_stacks[lines].force_push(card);
             }
@@ -137,12 +153,14 @@ bool Board::fromW_toW(unsigned from, unsigned to, Card card) {
     Working_stack tmp = working_stacks[from].pop_until(card);
     size_t size = tmp.size();
     if (size > 0) {
+        // if pushed failed, returns cards back
         if (!working_stacks[to].push(tmp)) {
             for (size_t i = 0; i < size; i++) {
                 working_stacks[from].force_push(tmp.pop_bottom());
             }
             return false;
         }
+        // otherwise save Move and make top of deck vidible
         else {
             history.push(Move(WW, from, to, card, !working_stacks[from].top().is_visible()));
             working_stacks[from].set_top_visible();
@@ -258,10 +276,11 @@ void Board::fromH_toV() {
 }
 
 Move Board::undo() {
-    Move move = history.pop();
+    Move move = history.pop(); // pops last move
     Card tmp;
     Working_stack new_stack;
     size_t size;
+    // gets data from last move and undo it
     switch(move.get_type()) {
         case INV: return move;
         case WW:
@@ -323,17 +342,19 @@ Move Board::undo() {
 }
 
 Move Board::help() {
+    // if no moves are generated or game changed, generates new possible moves
     if (generate || possible_moves.size() == 0) {
         generate = false;
         generate_moves();
     }
-    return possible_moves.pop();
+    return possible_moves.pop(); // returns possible move
 }
 
 void Board::generate_moves() {
-    possible_moves.clear();
+    possible_moves.clear(); // removes all moves from vector
     Card card;
     size_t size = 0;
+    // moves between workingstacks
     for (int from = 0; from < 7; from++) {
         for (int to = 0; to < 7; to++) {
             if (from == to) {
@@ -348,6 +369,7 @@ void Board::generate_moves() {
             }
         }
     }
+    // moves between working and color stacks
     for (int from = 0; from < 7; from++) {
         for (int to = 0; to < 4; to++) {
             if (fromW_toC(from, to)) {
@@ -355,11 +377,13 @@ void Board::generate_moves() {
             }
         }
     }
+    // moves between visible and working stacks
     for (int to = 0; to < 7; to++) {
         if (fromV_toW(to)) {
             possible_moves.push(undo());
         }
     }
+    // moves between visible and color stacks
     for (int to = 0; to < 4; to++) {
         if (fromV_toC(to)) {
             possible_moves.push(undo());

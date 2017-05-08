@@ -14,7 +14,7 @@ bool Console::string_to_command(std::string str) {
     int arg_id = 0;
     for (size_t i = 0; i < size; i++) {
         switch(arg_id) {
-            case 0:
+            case 0: // cmd 1
                 if (str[i] == ' ') {
                     arg_id++;
                 }
@@ -22,7 +22,7 @@ bool Console::string_to_command(std::string str) {
                     cmd1 += str[i];
                 }
                 break;
-            case 1:
+            case 1: // cmd 2
                 if (str[i] == ' ') {
                     arg_id++;
                 }
@@ -30,7 +30,7 @@ bool Console::string_to_command(std::string str) {
                     cmd2 += str[i];
                 }
                 break;
-            case 2:
+            case 2: // id
                 if (isdigit(str[i])) {
                     from = str[i++] - '0';
                     arg_id++;
@@ -40,7 +40,7 @@ bool Console::string_to_command(std::string str) {
                     arg_id++;
                 }
                 break;
-            case 3:
+            case 3: // cmd3
                 if (str[i] == ' ') {
                     arg_id++;
                 }
@@ -48,7 +48,7 @@ bool Console::string_to_command(std::string str) {
                     cmd3 += str[i];
                 }
                 break;
-            case 4:
+            case 4: // card
                 to = str[i++] - '0';
                 arg_id++;
                 break;
