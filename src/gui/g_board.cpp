@@ -282,6 +282,9 @@ void G_Board::clicked_visible()
          process_command();
      }
      else {
+        if (Card_deck_visible.top()->card.is_error_card()) {
+            return;
+        }
          from_type = Visible;
          Card_deck_visible.set_border("Border: 2px solid red;", Card_deck_visible.top());
          proc_move = true;
@@ -292,11 +295,14 @@ void G_Board::clicked_visible()
 void G_Board::clicked_color(int id)
 {
     if (proc_move) {
-        to_id = id;
         to_type = Single_Color;
+        to_id = id;
         process_command();
     }
     else {
+        if (Single_color_stack[id].top()->card.is_error_card()) {
+            return;
+        }
         from_id = id;
         from_type = Single_Color;
         Single_color_stack[id].set_border("Border: 2px solid red;", Single_color_stack[id].top());
@@ -312,7 +318,7 @@ void G_Board::clicked_working(int id, G_Card *gcard)
         process_command();
     }
     else {
-        if (gcard != nullptr) {
+        if (gcard != nullptr && !gcard->card.is_error_card()) {
             from_id = id;
             from_type = Working;
             Working_stack[id].set_border("Border: 2px solid red;", gcard);
@@ -343,6 +349,7 @@ void G_Board::undo() {
 }
 
 void G_Board::hint(){
+    proc_move = false;
     if (was_hint) {
         unset_hint();
     }
