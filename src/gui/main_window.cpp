@@ -162,6 +162,7 @@ void Main_Window::createMenus() {
     leave_game_menu->addAction(leave4);
 
     game_menu->addAction(Exit);
+    menuBar()->setNativeMenuBar(false);
 }
 
 void Main_Window::new_game1() {
