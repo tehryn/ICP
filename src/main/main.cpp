@@ -2,7 +2,7 @@
  * Author: Matejka Jiri, Misova Miroslava
  * login:  xmatej52, xmisov00
  * school: VUT FIT
- * date:   TODO
+ * date:   2017-05-08
  */
 #ifdef BUILDCLI
 #include "../game/Console.hpp"
