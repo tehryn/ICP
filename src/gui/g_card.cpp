@@ -16,20 +16,33 @@ G_Card::G_Card(Card card, QWidget *parent)
     this->card = card;
 
     std::string localpath = "../lib/cards/";
+    std::string localpath2 = "./lib/cards/";
 
-    if (card.is_error_card())
+    if (card.is_error_card()) {
         localpath += "empty.png";
-    else if (!card.is_visible())
+        localpath2 += "empty.png";
+    }
+    else if (!card.is_visible()) {
         localpath += "back.png";
+        localpath2 += "back.png";
+    }
     else
     {
         localpath += Card::color_to_string(card.get_color());
         localpath += std::to_string(card.get_value());
         localpath += ".png";
+        localpath2 += Card::color_to_string(card.get_color());
+        localpath2 += std::to_string(card.get_value());
+        localpath2 += ".png";
+    }
+    if (!does_file_exist(localpath)) {
+        localpath = localpath2;
+        if (!does_file_exist(localpath)) {
+            std::cerr << "Pictrues of cards not found!!!" << std::endl;
+        }
     }
 
-    if (!does_file_exist(localpath))
-        std::cout << "Image with card does not exist." << std::endl;
+
     picture.load(localpath.c_str());
     setParent(parent);
     setPixmap(picture.scaledToHeight(CARD_HEIGHT, Qt::SmoothTransformation));

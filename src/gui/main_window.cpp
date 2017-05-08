@@ -28,6 +28,9 @@ Main_Window::Main_Window(QWidget *parent) : QMainWindow(parent)
     createMenus();
 }
 
+Main_Window::~Main_Window() {
+    delete game_menu;
+}
 void Main_Window::createActions() {
     new1 = new QAction(tr("&Game slot 1"), this);
     new1->setShortcuts(QKeySequence::New);

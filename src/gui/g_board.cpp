@@ -452,6 +452,9 @@ void G_Board::mousePressEvent(QMouseEvent *event)
         to_type = ErrStack;
         process_command();
     }
+    else {
+        event = (QMouseEvent*) event; // gcc throws warnign.. so lets do nothing
+    }
 }
 
 G_Board::~G_Board() {}

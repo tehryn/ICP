@@ -11,7 +11,7 @@ int clicked_stack_02_index = -1;
 
 G_Stack::G_Stack(QWidget *parent) : QWidget(parent) {}
 
-void G_Stack::set_positionY(int positionY) {
+void G_Stack::set_positionY(uint positionY) {
     this->positionY = positionY;
 }
 
@@ -75,7 +75,7 @@ void G_Stack::clean() {
     //TODO
 }
 
-G_Card* G_Stack::find_card(int y) {
+G_Card* G_Stack::find_card(uint y) {
     if (top()->card.is_error_card())
         return nullptr;
     if (positionY == 0)

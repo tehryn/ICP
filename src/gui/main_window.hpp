@@ -75,6 +75,7 @@ private:
     void set_window();
 public:
     explicit Main_Window(QWidget *parent = 0);
+    ~Main_Window();
 
 signals:
 
