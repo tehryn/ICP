@@ -8,7 +8,7 @@
 #include <string>
 
 /**
- * Enum representing color of cards.
+ * Enum representing colours of cards.
  * @author Matejka Jiri (xmatej52)
  */
 enum Color {
@@ -21,18 +21,19 @@ enum Color {
 
 /**
  * @brief Class representing Card.
- * 
- * Class representing Card. Card has value, color and visibility. <br>
+ *
+ * Class representing Card. Card has value, colour and visibility. <br>
  * Value is from 0 to 13, where 0 represents invalid card. <br>
- * Colors are ERR, CLUBS, DIAMONDS, HEARTS and SPADES, where ERR represents
+ * Colours are ERR, CLUBS, DIAMONDS, HEARTS and SPADES, where ERR represents
  * invalid card. <br>
  * Visibility tells if card with its face up or not. Has values true and false. <br>
- * For checking validity of card, please use always color and looks for value
+ * For checking validity of card, please use always colour and looks for value
  * ERR.
+ * @author Matejka Jiri (xmatej52)
  */
 class Card {
 protected:
-    /// @var Represents alue of card.
+    /// @var Represents value of card.
     int value       = 0;
 
     /// @var Represents color of card.
@@ -42,6 +43,7 @@ protected:
     bool visibility = false;
 
 public:
+
     /**
     * Constructor of Card. Sets value to 0, color to ERR and visibility to false.
     * @return card with invalid values.
@@ -217,6 +219,7 @@ public:
             case SPADES:   return "S";
             case DIAMONDS: return "D";
             case CLUBS:    return "C";
+            default:       return "";
         }
     }
 
