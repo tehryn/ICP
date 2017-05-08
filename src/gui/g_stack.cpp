@@ -163,47 +163,7 @@ void G_Stack::mousePressEvent(QMouseEvent *event) {
        default:
            board->clicked_visible();
     }
-    /*
-    set_border("border: 0px;", clicked_card);
-    G_Card* gcard = find_card(event->pos().y());
-    if (clicked_card == nullptr) {
-        if (gcard == nullptr)
-            return;
-        if (this->type == Working && !gcard->card.is_visible())
-            return;
-
-
-        clicked_card = gcard;
-        clicked_stack_01 = this->type;
-        clicked_stack_01_index = this->id;
-
-        if (this->type == Hidden)
-            process_command();
-
-        set_border("border: 2px solid red;", gcard);
-        std::cout << "Clicked: " << Card::to_string(clicked_card->card)
-                  << " Stack: " << this->stack_identifier_to_str(clicked_stack_01, clicked_stack_01_index) << std::endl;
-    }
-    else
-    { 
-        clicked_stack_02 = this->type;
-        clicked_stack_02_index = this->id;
-
-        std::cout << "Clicked: " << Card::to_string(clicked_card->card)
-                  << " Stack: " << this->stack_identifier_to_str(clicked_stack_01, clicked_stack_01_index)
-                  << " Stack: " << this->stack_identifier_to_str(this->type, this->id) << std::endl;
-
-        if (!clicked_card->card.is_error_card()) {
-
-            std::cout << "Process command." << std::endl;
-            process_command();
-        }
-        else
-            reset_globals();
-    }*/
 }
 void G_Stack::process_command() {
     this->board->process_command();
 }
-
-

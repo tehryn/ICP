@@ -1,6 +1,6 @@
 /** @file
  *  Header file for class G_Board.
- *  @author Misova Miroslava (xmisov00)
+ *  @author Misova Miroslava (xmisov00), Matejka Jiri (xmatej52)
  */
 #ifndef G_BOARD_HPP
 #define G_BOARD_HPP
