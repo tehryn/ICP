@@ -39,8 +39,6 @@ void G_Stack::push(Card c) {
         card->move(0, (this->positionY) * (this->size()));
         card->show();
         this->stack.push_back(card);
-        //this->updateGeometry();
-        //TODO
     }
 }
 
@@ -72,7 +70,6 @@ void G_Stack::clean() {
         delete stack[i];
     }
     this->stack.clear();
-    //TODO
 }
 
 G_Card* G_Stack::find_card(uint y) {
