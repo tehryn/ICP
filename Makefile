@@ -55,3 +55,5 @@ doxygen:
 	doxygen doc/Doxyfile
 run:
 	(cd src && ./hra2017 && ./hra2017-cli)
+pack:
+	zip xmatej52-xmisov00.zip -r ./build/ ./src/game/*.hpp ./src/game/*.cpp ./src/gui/*.hpp ./src/gui/*.cpp ./src/main/main.cpp ./src/gui/main.hpp ./src/Solitaire.pro ./lib/cards/* ./examples/* ./README.txt ./Makefile ./doc/Doxyfile
