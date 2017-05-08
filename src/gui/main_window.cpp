@@ -1,3 +1,9 @@
+/*
+ * Author: Matejka Jiri
+ * login:  xmatej52
+ * school: VUT FIT
+ * date:   8. 5. 2017
+ */
 #include "main_window.hpp"
 
 Main_Window::Main_Window(QWidget *parent) : QMainWindow(parent)
