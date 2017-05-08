@@ -1,3 +1,4 @@
+
 CC=g++
 OFLAGS=-c -Wall -Wextra -pedantic -g -std=c++11
 CFLAGS=-std=c++11
@@ -6,9 +7,15 @@ SRCDIR=src/game/
 MAIN=src/main/main.cpp
 OBJECT_GAME=$(addprefix $(OBJDIR)/, Card_stack.o Single_color_stack.o \
          	Working_stack.o Board.o Console.o hra2017-cli.o)
-all: bin/hra2017-cli
+all: src/hra2017 src/hra2017-cli
 
-bin/hra2017-cli: $(OBJECT_GAME)
+src/hra2017: src/Makefile
+	${MAKE} -C src
+
+src/Makefile: src/Solitaire.pro
+	qmake src/Solitaire.pro -o src/Makefile
+
+src/hra2017-cli: $(OBJECT_GAME)
 	$(CC) $(CFLAGS) -o $@ $^
 
 build/Card_stack.o : $(SRCDIR)Card_stack.cpp $(SRCDIR)Card_stack.hpp \
@@ -41,6 +48,9 @@ build/hra2017-cli.o : $(MAIN)
 pack:
 	
 clean:
-	rm -rf $(OBJECT_GAME) bin/hra2017-cli doc/html
+	${MAKE} -C src clean
+	rm -rf src/hra2017-cli src/hra2017 src/Makefile doc/html build/hra2017-cli.o
 doxygen:
 	doxygen doc/Doxyfile
+run:
+	(cd src && ./hra2017 && ./hra2017-cli)
