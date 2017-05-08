@@ -8,11 +8,12 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = gui
+TARGET = hra2017
 TEMPLATE = app
 QMAKE_CXXFLAGS += -std=c++11 -DBUILDGUI
 
-DESTDIR = ../build
+DESTDIR = .
+OBJECTS_DIR = ../build
 
 SOURCES += main/main.cpp\
         gui/g_board.cpp \
