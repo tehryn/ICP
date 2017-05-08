@@ -106,15 +106,33 @@ public:
     G_Card* top();
 
     /**
-     * Remove top card of stack.
-     * @param card Card to remove
+     * Push one card on top of this stack.
+     * @param card Card to push
      */
     void push(Card card);
+
+    /**
+     * Remove top card of this stack and return.
+     * @return Removed card
+     */
     G_Card* pop();
+
+    /**
+     * Finds and returns a card on index.
+     * @param  index Index in the stack
+     * @return       Graphical card
+     */
     G_Card* get(int index);
+
+    /**
+     * Clear the stack.
+     */
     void clean();
 
 protected:
+    /**
+     * Player clicked on stack.
+     */
     void mousePressEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
 };
 
