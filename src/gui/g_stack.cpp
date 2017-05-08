@@ -117,7 +117,8 @@ void G_Stack::set_border(const char *style, G_Card *gcard)
     std::string str;
     if (static_cast<std::string>(style) == "Border: 2px solid red;" && gcard->card.is_error_card())
         return;
-    if (gcard == nullptr) return;
+    if (gcard == nullptr)
+        return;
 
     if (this->type == Working)
     {
