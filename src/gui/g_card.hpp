@@ -19,7 +19,11 @@ constexpr int CARD_WIDTH = CARD_WIDTH_ORIGIN/2;
 /// @var Height of card to be used. Do NOT change. Please change CARD_WIDTH if you want.
 constexpr int CARD_HEIGHT = ((CARD_HEIGHT_ORIGIN) * (CARD_WIDTH)) / (CARD_WIDTH_ORIGIN);
 
-
+/**
+ * @brief Class representing graphical view of cards.
+ *
+ * @author Misova Miroslava (xmisov00)
+ */
 class G_Card : public QLabel
 {
 private:

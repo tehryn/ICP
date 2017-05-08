@@ -13,6 +13,11 @@
 
 class G_Board;
 
+/**
+ * @brief Class representing graphical view of stack of cards.
+ *
+ * @author Misova Miroslava (xmisov00)
+ */
 class G_Stack : public QWidget
 {
     Q_OBJECT
