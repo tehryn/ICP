@@ -1,0 +1,14 @@
+<map id="src/gui/g_board.hpp" name="src/gui/g_board.hpp">
+<area shape="rect" id="node9" href="$Board_8hpp.html" title="../game/Board.hpp" alt="" coords="638,83,766,112"/>
+<area shape="rect" id="node11" href="$Card_8hpp.html" title="Card.hpp" alt="" coords="267,315,342,344"/>
+<area shape="rect" id="node40" href="$Move_8hpp.html" title="Move.hpp" alt="" coords="970,237,1047,267"/>
+<area shape="rect" id="node54" href="$globals_8hpp_source.html" title="../gui/globals.hpp" alt="" coords="1310,160,1430,189"/>
+<area shape="rect" id="node56" href="$g__card_8hpp_source.html" title="g_card.hpp" alt="" coords="1278,237,1363,267"/>
+<area shape="rect" id="node61" href="$g__stack_8hpp_source.html" title="../gui/g_stack.hpp" alt="" coords="1406,83,1531,112"/>
+<area shape="rect" id="node17" href="$Card__stack_8hpp.html" title="Card_stack.hpp" alt="" coords="375,237,490,267"/>
+<area shape="rect" id="node26" href="$Single__color__stack_8hpp.html" title="Single_color_stack.hpp" alt="" coords="56,160,214,189"/>
+<area shape="rect" id="node30" href="$Working__stack_8hpp.html" title="Working_stack.hpp" alt="" coords="238,160,371,189"/>
+<area shape="rect" id="node34" href="$Card__deck__hidden_8hpp.html" title="Card_deck_hidden.hpp" alt="" coords="446,160,600,189"/>
+<area shape="rect" id="node37" href="$Card__deck__visible_8hpp.html" title="Card_deck_visible.hpp" alt="" coords="624,160,779,189"/>
+<area shape="rect" id="node44" href="$History_8hpp.html" title="History.hpp" alt="" coords="1046,160,1134,189"/>
+</map>
