@@ -1,3 +1,6 @@
+# MAKEFILE
+# Author: Matejka Jiri (xmatej52)
+# Date: 8. 5. 2017
 CC=g++
 OFLAGS=-c -Wall -Wextra -pedantic -g -std=c++11 -O2
 CFLAGS=-std=c++11
