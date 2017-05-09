@@ -8,14 +8,6 @@
 #include "g_stack.hpp"
 #include "g_board.hpp"
 
-G_Card * clicked_card = nullptr;
-Stacks clicked_stack_01 = ErrStack;
-int clicked_stack_01_index = -1;
-
-Stacks clicked_stack_02 = ErrStack;
-int clicked_stack_02_index = -1;
-
-
 G_Stack::G_Stack(QWidget *parent) : QWidget(parent) {}
 
 void G_Stack::set_positionY(uint positionY)
