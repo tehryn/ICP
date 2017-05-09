@@ -1,4 +1,26 @@
 var searchData=
 [
-  ['head',['head',['../classResponse.html#a84377fd86db64bb6e04f1586a61d54c2',1,'Response::head()'],['../classRequest.html#a3a31e023fc010692108e02d11744937b',1,'Request::head()']]]
+  ['g_5fboard',['G_Board',['../classG__Board.html',1,'G_Board'],['../classG__Board.html#ac0a81a8bb37046423546d1ac8a581496',1,'G_Board::G_Board()']]],
+  ['g_5fboard_2ehpp',['g_board.hpp',['../g__board_8hpp.html',1,'']]],
+  ['g_5fcard',['G_Card',['../classG__Card.html',1,'G_Card'],['../classG__Card.html#afb3d18153055222c0fff47f7ecbbe2c2',1,'G_Card::G_Card()']]],
+  ['g_5fcard_2ehpp',['g_card.hpp',['../g__card_8hpp.html',1,'']]],
+  ['g_5fstack',['G_Stack',['../classG__Stack.html',1,'G_Stack'],['../classG__Stack.html#a545677d18dad7c1c5ce83a5d9d97441f',1,'G_Stack::G_Stack()']]],
+  ['g_5fstack_2ehpp',['g_stack.hpp',['../g__stack_8hpp.html',1,'']]],
+  ['game',['game',['../classG__Board.html#ac097303ec99b80f74f87797192e4f5d4',1,'G_Board::game()'],['../classMain__Window.html#a51b8c1837cccd776e47164e85ed5b168',1,'Main_Window::game()']]],
+  ['game_5fheight',['GAME_HEIGHT',['../g__board_8hpp.html#a8687e4441ae0c138bb361ca472ebfb2d',1,'g_board.hpp']]],
+  ['game_5fmenu',['game_menu',['../classMain__Window.html#af92d1d56ac16b65a3f5b33ed2d2daebf',1,'Main_Window']]],
+  ['game_5fwidth',['GAME_WIDTH',['../g__board_8hpp.html#a29607cd74fdd4a6bff3db3e4d8bc536c',1,'g_board.hpp']]],
+  ['generate_5fmoves',['generate_moves',['../classBoard.html#a2beb9d7121768ecede091b7bf08d877f',1,'Board']]],
+  ['get',['get',['../classCard__stack.html#a26a991526f00c0b85b7161886820247a',1,'Card_stack::get()'],['../classG__Stack.html#a6b028106015fcfbcd77d7bf36989a911',1,'G_Stack::get()']]],
+  ['get_5fcard',['get_card',['../classMove.html#a605c0fab86526a901d6954f5b8de6508',1,'Move']]],
+  ['get_5fcolor',['get_color',['../classCard.html#aa9de5de2a93fcdb1707c14f190fd7850',1,'Card::get_color()'],['../classSingle__color__stack.html#a04b590d1f407905176a1d9090bcec1bf',1,'Single_color_stack::get_color()']]],
+  ['get_5fcolor_5fstack',['get_color_stack',['../classBoard.html#aa3f89909888aefdc8e8c7b40ccf63c6c',1,'Board']]],
+  ['get_5ffrom',['get_from',['../classMove.html#ae75e259a1d71ffaa966adbc7abcd7428',1,'Move']]],
+  ['get_5fhidden_5fdeck',['get_hidden_deck',['../classBoard.html#aefd284452e92d92d374752a2be752751',1,'Board']]],
+  ['get_5fscore',['get_score',['../classBoard.html#a3f5ce9b6f67103471ec1776d3739a4d5',1,'Board']]],
+  ['get_5fto',['get_to',['../classMove.html#aa9390987d6aba98ebcf35ae899ce0fe3',1,'Move']]],
+  ['get_5ftype',['get_type',['../classMove.html#a7b87cc0ae280e531edbcb3479536e2e1',1,'Move']]],
+  ['get_5fvalue',['get_value',['../classCard.html#a98db07bb541053a21c35ff76d8041f6a',1,'Card']]],
+  ['get_5fvisible_5fdeck',['get_visible_deck',['../classBoard.html#a75b1a8ef2f56445c9f8161ec53150120',1,'Board']]],
+  ['get_5fworking_5fstack',['get_working_stack',['../classBoard.html#a1be47be8c58412fb02b895eb2271dd38',1,'Board']]]
 ];

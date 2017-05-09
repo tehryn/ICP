@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['proc_5fld_5fdata',['proc_ld_data',['../classRequest.html#a82a9ca8ccfaa967c9b3e26ffd7e96609',1,'Request']]]
+  ['err',['err',['../classMove.html#a80fdc14c148d9462c4a3745a97ef6c57',1,'Move']]],
+  ['exit_5fgame',['exit_game',['../classMain__Window.html#a263611213714d4965961d8476b86c309',1,'Main_Window']]]
 ];

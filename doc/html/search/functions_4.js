@@ -1,8 +1,19 @@
 var searchData=
 [
-  ['set_5fcommand',['set_command',['../classRequest.html#a365842a27cc49d0ffed205f3051a01f9',1,'Request']]],
-  ['set_5ferror',['set_error',['../classResponse.html#ab3e195635796e090a6902efc35b0f58a',1,'Response']]],
-  ['set_5fhead',['set_head',['../classResponse.html#a9abb743a6d05e77301f3ead731f2cf90',1,'Response::set_head()'],['../classRequest.html#a339f929573ebe4df6976b3492f634324',1,'Request::set_head()']]],
-  ['set_5flen',['set_len',['../classResponse.html#a168b6704ed0d3518ad146efa936a18f1',1,'Response::set_len()'],['../classRequest.html#a212c896ec67cc1fe87cb80796b59e5aa',1,'Request::set_len()']]],
-  ['set_5fpath',['set_path',['../classRequest.html#a667eada0b15838f648906132c0d4cc6a',1,'Request']]]
+  ['g_5fboard',['G_Board',['../classG__Board.html#ac0a81a8bb37046423546d1ac8a581496',1,'G_Board']]],
+  ['g_5fcard',['G_Card',['../classG__Card.html#afb3d18153055222c0fff47f7ecbbe2c2',1,'G_Card']]],
+  ['g_5fstack',['G_Stack',['../classG__Stack.html#a545677d18dad7c1c5ce83a5d9d97441f',1,'G_Stack']]],
+  ['generate_5fmoves',['generate_moves',['../classBoard.html#a2beb9d7121768ecede091b7bf08d877f',1,'Board']]],
+  ['get',['get',['../classCard__stack.html#a26a991526f00c0b85b7161886820247a',1,'Card_stack::get()'],['../classG__Stack.html#a6b028106015fcfbcd77d7bf36989a911',1,'G_Stack::get()']]],
+  ['get_5fcard',['get_card',['../classMove.html#a605c0fab86526a901d6954f5b8de6508',1,'Move']]],
+  ['get_5fcolor',['get_color',['../classCard.html#aa9de5de2a93fcdb1707c14f190fd7850',1,'Card::get_color()'],['../classSingle__color__stack.html#a04b590d1f407905176a1d9090bcec1bf',1,'Single_color_stack::get_color()']]],
+  ['get_5fcolor_5fstack',['get_color_stack',['../classBoard.html#aa3f89909888aefdc8e8c7b40ccf63c6c',1,'Board']]],
+  ['get_5ffrom',['get_from',['../classMove.html#ae75e259a1d71ffaa966adbc7abcd7428',1,'Move']]],
+  ['get_5fhidden_5fdeck',['get_hidden_deck',['../classBoard.html#aefd284452e92d92d374752a2be752751',1,'Board']]],
+  ['get_5fscore',['get_score',['../classBoard.html#a3f5ce9b6f67103471ec1776d3739a4d5',1,'Board']]],
+  ['get_5fto',['get_to',['../classMove.html#aa9390987d6aba98ebcf35ae899ce0fe3',1,'Move']]],
+  ['get_5ftype',['get_type',['../classMove.html#a7b87cc0ae280e531edbcb3479536e2e1',1,'Move']]],
+  ['get_5fvalue',['get_value',['../classCard.html#a98db07bb541053a21c35ff76d8041f6a',1,'Card']]],
+  ['get_5fvisible_5fdeck',['get_visible_deck',['../classBoard.html#a75b1a8ef2f56445c9f8161ec53150120',1,'Board']]],
+  ['get_5fworking_5fstack',['get_working_stack',['../classBoard.html#a1be47be8c58412fb02b895eb2271dd38',1,'Board']]]
 ];

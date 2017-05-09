@@ -1,0 +1,25 @@
+<map id="src/game/Card.hpp" name="src/game/Card.hpp">
+<area shape="rect" id="node3" href="$Board_8hpp.html" title="src/game/Board.hpp" alt="" coords="807,265,945,295"/>
+<area shape="rect" id="node7" href="$Console_8hpp.html" title="src/game/Console.hpp" alt="" coords="968,352,1120,381"/>
+<area shape="rect" id="node11" href="$g__board_8hpp.html" title="src/gui/g_board.hpp" alt="" coords="1320,352,1456,381"/>
+<area shape="rect" id="node21" href="$Card__stack_8hpp.html" title="src/game/Card_stack.hpp" alt="" coords="517,83,688,112"/>
+<area shape="rect" id="node24" href="$Single__color__stack_8hpp.html" title="src/game/Single_color\l_stack.hpp" alt="" coords="5,161,155,207"/>
+<area shape="rect" id="node29" href="$Working__stack_8hpp.html" title="src/game/Working_stack.hpp" alt="" coords="179,169,371,199"/>
+<area shape="rect" id="node44" href="$Move_8hpp.html" title="src/game/Move.hpp" alt="" coords="1032,83,1168,112"/>
+<area shape="rect" id="node52" href="$g__card_8hpp.html" title="src/gui/g_card.hpp" alt="" coords="1420,83,1548,112"/>
+<area shape="rect" id="node5" href="$Board_8cpp_source.html" title="src/game/Board.cpp" alt="" coords="805,352,944,381"/>
+<area shape="rect" id="node9" href="$Console_8cpp_source.html" title="src/game/Console.cpp" alt="" coords="968,429,1120,459"/>
+<area shape="rect" id="node13" href="$g__board_8cpp_source.html" title="src/gui/g_board.cpp" alt="" coords="1144,429,1280,459"/>
+<area shape="rect" id="node15" href="$g__stack_8cpp_source.html" title="src/gui/g_stack.cpp" alt="" coords="1496,429,1632,459"/>
+<area shape="rect" id="node17" href="$main__window_8hpp.html" title="src/gui/main_window.hpp" alt="" coords="1304,429,1472,459"/>
+<area shape="rect" id="node19" href="$main__window_8cpp_source.html" title="src/gui/main_window.cpp" alt="" coords="1304,507,1472,536"/>
+<area shape="rect" id="node34" href="$Card__deck__hidden_8hpp.html" title="src/game/Card_deck\l_hidden.hpp" alt="" coords="640,161,781,207"/>
+<area shape="rect" id="node37" href="$Card__deck__visible_8hpp.html" title="src/game/Card_deck\l_visible.hpp" alt="" coords="805,161,947,207"/>
+<area shape="rect" id="node40" href="$Card__stack_8cpp_source.html" title="src/game/Card_stack.cpp" alt="" coords="395,169,565,199"/>
+<area shape="rect" id="node27" href="$Single__color__stack_8cpp_source.html" title="src/game/Single_color\l_stack.cpp" alt="" coords="5,257,155,303"/>
+<area shape="rect" id="node32" href="$Working__stack_8cpp_source.html" title="src/game/Working_stack.cpp" alt="" coords="179,265,371,295"/>
+<area shape="rect" id="node47" href="$History_8hpp.html" title="src/game/History.hpp" alt="" coords="971,169,1117,199"/>
+<area shape="rect" id="node54" href="$globals_8hpp_source.html" title="src/gui/globals.hpp" alt="" coords="1445,169,1576,199"/>
+<area shape="rect" id="node62" href="$g__card_8cpp_source.html" title="src/gui/g_card.cpp" alt="" coords="1600,169,1728,199"/>
+<area shape="rect" id="node57" href="$g__stack_8hpp.html" title="src/gui/g_stack.hpp" alt="" coords="1496,265,1632,295"/>
+</map>

@@ -61,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -79,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_6aea175546ecb966ab62f32415f7724c.html">src</a></li><li class="navelem"><a class="el" href="dir_e61f1facd8e11427b0fd0e47ce013667.html">game</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1699be727a800b1d059c6f7f2b91d2ee.html">game</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -93,27 +94,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * school: VUT FIT</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * date:   23. 4. 2017</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;Single_color_stack.hpp&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Single__color__stack_8hpp.html">Single_color_stack.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keywordtype">bool</span> Single_color_stack::push(Card card) {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">if</span> (this-&gt;size() == 0) {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keywordflow">if</span> (card.get_value() != 1) { <span class="comment">// only Ace can be moved on empty color stack</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classSingle__color__stack.html#aa51890c6510808e91af7acd80f0d43b8">    9</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classSingle__color__stack.html#aa51890c6510808e91af7acd80f0d43b8">Single_color_stack::push</a>(<a class="code" href="classCard.html">Card</a> card) {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classCard__stack.html#ab4322fee5268a33b0818a037691bf9e6">size</a>() == 0) {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keywordflow">if</span> (card.<a class="code" href="classCard.html#a98db07bb541053a21c35ff76d8041f6a">get_value</a>() != 1) { <span class="comment">// only Ace can be moved on empty color stack</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        }</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            this-&gt;color = card.get_color(); <span class="comment">// change color of stack</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            this-&gt;force_push(card);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            this-&gt;color = card.<a class="code" href="classCard.html#aa9de5de2a93fcdb1707c14f190fd7850">get_color</a>(); <span class="comment">// change color of stack</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            this-&gt;<a class="code" href="classCard__stack.html#a15b52e43686ec86b0a7c4ea85dfb86b7">force_push</a>(card);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        }</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (card.get_color() == this-&gt;color &amp;&amp; card.get_value() == (1 + this-&gt;top().get_value())) {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        this-&gt;force_push(card);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (card.<a class="code" href="classCard.html#aa9de5de2a93fcdb1707c14f190fd7850">get_color</a>() == this-&gt;color &amp;&amp; card.<a class="code" href="classCard.html#a98db07bb541053a21c35ff76d8041f6a">get_value</a>() == (1 + this-&gt;<a class="code" href="classCard__stack.html#a3a2b166ac8ec8c1de8fe0cab098ca5db">top</a>().<a class="code" href="classCard.html#a98db07bb541053a21c35ff76d8041f6a">get_value</a>())) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        this-&gt;<a class="code" href="classCard__stack.html#a15b52e43686ec86b0a7c4ea85dfb86b7">force_push</a>(card);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="ttc" id="classCard__stack_html_a15b52e43686ec86b0a7c4ea85dfb86b7"><div class="ttname"><a href="classCard__stack.html#a15b52e43686ec86b0a7c4ea85dfb86b7">Card_stack::force_push</a></div><div class="ttdeci">void force_push(Card card)</div><div class="ttdef"><b>Definition:</b> <a href="Card__stack_8hpp_source.html#l00046">Card_stack.hpp:46</a></div></div>
+<div class="ttc" id="classCard__stack_html_ab4322fee5268a33b0818a037691bf9e6"><div class="ttname"><a href="classCard__stack.html#ab4322fee5268a33b0818a037691bf9e6">Card_stack::size</a></div><div class="ttdeci">size_t size()</div><div class="ttdef"><b>Definition:</b> <a href="Card__stack_8hpp_source.html#l00038">Card_stack.hpp:38</a></div></div>
+<div class="ttc" id="classCard_html_aa9de5de2a93fcdb1707c14f190fd7850"><div class="ttname"><a href="classCard.html#aa9de5de2a93fcdb1707c14f190fd7850">Card::get_color</a></div><div class="ttdeci">int get_color()</div><div class="ttdef"><b>Definition:</b> <a href="Card_8hpp_source.html#l00071">Card.hpp:71</a></div></div>
+<div class="ttc" id="classCard__stack_html_a3a2b166ac8ec8c1de8fe0cab098ca5db"><div class="ttname"><a href="classCard__stack.html#a3a2b166ac8ec8c1de8fe0cab098ca5db">Card_stack::top</a></div><div class="ttdeci">Card top()</div><div class="ttdef"><b>Definition:</b> <a href="Card__stack_8hpp_source.html#l00092">Card_stack.hpp:92</a></div></div>
+<div class="ttc" id="classSingle__color__stack_html_aa51890c6510808e91af7acd80f0d43b8"><div class="ttname"><a href="classSingle__color__stack.html#aa51890c6510808e91af7acd80f0d43b8">Single_color_stack::push</a></div><div class="ttdeci">bool push(Card card)</div><div class="ttdef"><b>Definition:</b> <a href="Single__color__stack_8cpp_source.html#l00009">Single_color_stack.cpp:9</a></div></div>
+<div class="ttc" id="Single__color__stack_8hpp_html"><div class="ttname"><a href="Single__color__stack_8hpp.html">Single_color_stack.hpp</a></div></div>
+<div class="ttc" id="classCard_html"><div class="ttname"><a href="classCard.html">Card</a></div><div class="ttdoc">Class representing Card. </div><div class="ttdef"><b>Definition:</b> <a href="Card_8hpp_source.html#l00034">Card.hpp:34</a></div></div>
+<div class="ttc" id="classCard_html_a98db07bb541053a21c35ff76d8041f6a"><div class="ttname"><a href="classCard.html#a98db07bb541053a21c35ff76d8041f6a">Card::get_value</a></div><div class="ttdeci">int get_value()</div><div class="ttdef"><b>Definition:</b> <a href="Card_8hpp_source.html#l00065">Card.hpp:65</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['arguments',['Arguments',['../classArguments.html',1,'Arguments'],['../classArguments.html#a37ca9b921df1132fd139a2becd500db0',1,'Arguments::Arguments(int argc, char **argv)'],['../classArguments.html#a37ca9b921df1132fd139a2becd500db0',1,'Arguments::Arguments(int argc, char **argv)']]]
+  ['app',['app',['../classMain__Window.html#a860909539eaac0937ffbe3db9a404ba9',1,'Main_Window']]]
 ];

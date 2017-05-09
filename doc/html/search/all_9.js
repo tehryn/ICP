@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['r_5fpath_5fset',['r_path_set',['../classArguments.html#aa482947ea5b83780b5fb7f581a2d805f',1,'Arguments']]],
-  ['remote_5fpath',['remote_path',['../classArguments.html#a85c689fefb3a7d524f5f9671bf14e8ec',1,'Arguments']]],
-  ['request',['Request',['../classRequest.html',1,'']]],
-  ['response',['Response',['../classResponse.html',1,'Response'],['../classResponse.html#a553750c3e865cd00ea612d7041963876',1,'Response::Response()']]],
-  ['root_5ffolder',['root_folder',['../classArguments.html#a3b3ef4aeaabb338128795cf7bbe19f20',1,'Arguments']]]
+  ['main_5fwindow',['Main_Window',['../classMain__Window.html',1,'Main_Window'],['../classMain__Window.html#a1a08bc75c367560d381eab55aaa84c44',1,'Main_Window::Main_Window()']]],
+  ['main_5fwindow_2ehpp',['main_window.hpp',['../main__window_8hpp.html',1,'']]],
+  ['make_5fhidden',['make_hidden',['../classCard.html#ad5feaa42e8bbcb9a0f3ee4b60d8c9397',1,'Card']]],
+  ['make_5fvisible',['make_visible',['../classCard.html#ad50af268614f2fabe71b7d342386a067',1,'Card']]],
+  ['mousepressevent',['mousePressEvent',['../classG__Board.html#a63f809841218365cf17c21aaa974d287',1,'G_Board::mousePressEvent()'],['../classG__Stack.html#ac33a80d9687332bf53de264ddada97aa',1,'G_Stack::mousePressEvent()']]],
+  ['move',['Move',['../classMove.html',1,'Move'],['../classMove.html#a393ceb2f20cb21fb01b428569af6521a',1,'Move::Move()']]],
+  ['move_2ehpp',['Move.hpp',['../Move_8hpp.html',1,'']]]
 ];

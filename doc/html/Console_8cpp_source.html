@@ -61,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -79,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_6aea175546ecb966ab62f32415f7724c.html">src</a></li><li class="navelem"><a class="el" href="dir_e61f1facd8e11427b0fd0e47ce013667.html">game</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1699be727a800b1d059c6f7f2b91d2ee.html">game</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -93,13 +94,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * school: VUT FIT</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * date:   23. 4. 2017</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;Console.hpp&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Console_8hpp.html">Console.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keywordtype">bool</span> Console::string_to_command(std::string str) {</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classConsole.html#a8a1727a4bff3acc851673463a2737782">    9</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classConsole.html#a8a1727a4bff3acc851673463a2737782">Console::string_to_command</a>(std::string str) {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">size_t</span> size = str.size();</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    std::string cmd1, cmd2, cmd3, tmp;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">int</span> to = 10, from = 10;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    Card card;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classCard.html">Card</a> card;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">int</span> arg_id = 0;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; size; i++) {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">switch</span>(arg_id) {</div>
@@ -144,11 +145,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">case</span> 5: tmp += str[i];</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    card = Card::string_to_card(tmp, 0);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span> command(cmd1, cmd2, from, cmd3, to, card);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    card = <a class="code" href="classCard.html#a332f8fe607bf658f0d329fadeef8aa89">Card::string_to_card</a>(tmp, 0);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classConsole.html#a306e952b87cebaea3af3a7fb739bb227">command</a>(cmd1, cmd2, from, cmd3, to, card);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">void</span> Console::help() {</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classConsole.html#a93bc2aaf049d20743ab8cca114274e85">   62</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classConsole.html#a93bc2aaf049d20743ab8cca114274e85">Console::help</a>() {</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Use: Command [FILENAME] [ [ [ [ [ Card_stack1 ] FROM ] Card_stack2 TO ] CARD ] ]\n\n&quot;</span>;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Command1 is one of following strings:\n&quot;</span>;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;print - prints game on stdout\n&quot;</span>;</div>
@@ -170,75 +171,96 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;and all cards until CARD is reached will be moved between them\n&quot;</span>;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keywordtype">bool</span> Console::command(std::string cmd1, std::string cmd2=<span class="stringliteral">&quot;&quot;</span>, <span class="keywordtype">unsigned</span> from=10, std::string cmd3=<span class="stringliteral">&quot;&quot;</span>, <span class="keywordtype">unsigned</span> to=10, Card card=err) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classConsole.html#a306e952b87cebaea3af3a7fb739bb227">   84</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classConsole.html#a306e952b87cebaea3af3a7fb739bb227">Console::command</a>(std::string cmd1, std::string cmd2=<span class="stringliteral">&quot;&quot;</span>, <span class="keywordtype">unsigned</span> from=10, std::string cmd3=<span class="stringliteral">&quot;&quot;</span>, <span class="keywordtype">unsigned</span> to=10, <a class="code" href="classCard.html">Card</a> card=err) {</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (cmd1 == <span class="stringliteral">&quot;print&quot;</span>) {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        ret = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmd1 == <span class="stringliteral">&quot;move&quot;</span>) {</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">if</span> (cmd2 == <span class="stringliteral">&quot;H&quot;</span> || cmd2 == <span class="stringliteral">&quot;hidden&quot;</span>) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            game.fromH_toV();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            game.<a class="code" href="classBoard.html#ad53ee57725c6ba522041b4e0aa01c91f">fromH_toV</a>();</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            ret = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmd2 == <span class="stringliteral">&quot;V&quot;</span> || cmd2 == <span class="stringliteral">&quot;visible&quot;</span>) {</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keywordflow">if</span> (cmd3 == <span class="stringliteral">&quot;W&quot;</span> || cmd3 == <span class="stringliteral">&quot;working&quot;</span>) {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                ret = game.fromV_toW(to);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                ret = game.<a class="code" href="classBoard.html#a2c5fd637bb6d4cf7e5415f0d6dd2d9c8">fromV_toW</a>(to);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            }</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmd3 == <span class="stringliteral">&quot;C&quot;</span> || cmd3 == <span class="stringliteral">&quot;color&quot;</span>) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                ret = game.fromV_toC(to);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                ret = game.<a class="code" href="classBoard.html#a2eefe5ff6ece3d37419229849bd021fa">fromV_toC</a>(to);</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            }</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmd2 == <span class="stringliteral">&quot;W&quot;</span> || cmd2 == <span class="stringliteral">&quot;working&quot;</span>) {</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">if</span>(cmd3 == <span class="stringliteral">&quot;W&quot;</span> || cmd3 == <span class="stringliteral">&quot;working&quot;</span>) {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                ret = game.fromW_toW(from, to, card);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                ret = game.<a class="code" href="classBoard.html#a9a9132339ba38154a0122ca3848c9de9">fromW_toW</a>(from, to, card);</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            }</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmd3 == <span class="stringliteral">&quot;C&quot;</span> || cmd3 == <span class="stringliteral">&quot;color&quot;</span>) {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                ret = game.fromW_toC(from, to);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                ret = game.<a class="code" href="classBoard.html#a987b2a56c597e395ac3c9524b9a83723">fromW_toC</a>(from, to);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            }</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmd2 == <span class="stringliteral">&quot;C&quot;</span> || cmd2 == <span class="stringliteral">&quot;color&quot;</span>) {</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">if</span> (cmd3 == <span class="stringliteral">&quot;C&quot;</span> || cmd3 == <span class="stringliteral">&quot;color&quot;</span>) {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                ret = game.fromC_toC(from, to);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                ret = game.<a class="code" href="classBoard.html#af66c8ba392dc8f3168f35f6f00e66edb">fromC_toC</a>(from, to);</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            }</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmd3 == <span class="stringliteral">&quot;W&quot;</span> || cmd3 == <span class="stringliteral">&quot;working&quot;</span>) {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                ret = game.fromC_toW(from, to);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                ret = game.<a class="code" href="classBoard.html#ab1c798d97ef04060e8f98ee24dd88529">fromC_toW</a>(from, to);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            }</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        }</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmd1 == <span class="stringliteral">&quot;hint&quot;</span>) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        Move tmp = game.help();</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">if</span> (!tmp.is_move_invalid()) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <a class="code" href="classMove.html">Move</a> tmp = game.<a class="code" href="classBoard.html#a0cf3cf125c537aaa3142ebfa50945a11">help</a>();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">if</span> (!tmp.<a class="code" href="classMove.html#a9526f65375f965b469badf52416d1c65">is_move_invalid</a>()) {</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;move &quot;</span> &lt;&lt; tmp;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        }</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmd1 == <span class="stringliteral">&quot;undo&quot;</span>) {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        game.undo();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        game.<a class="code" href="classBoard.html#aa394fe2d89189fbab18ced675a6c2bad">undo</a>();</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        ret = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmd1 == <span class="stringliteral">&quot;load&quot;</span>) {</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        ret = game.load_game(cmd2);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        ret = game.<a class="code" href="classBoard.html#ac8285cf26a59a7b1ae3082e512996a8d">load_game</a>(cmd2);</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmd1 == <span class="stringliteral">&quot;save&quot;</span>) {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        ret = game.save_game(cmd2);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        ret = game.<a class="code" href="classBoard.html#af57837475a7f0c2093f04e1a45c64198">save_game</a>(cmd2);</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmd1 == <span class="stringliteral">&quot;new&quot;</span>) {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        game.new_game();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        game.<a class="code" href="classBoard.html#a93899071c351ad008fbdbca79b828e7b">new_game</a>();</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        ret = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cmd1 == <span class="stringliteral">&quot;help&quot;</span>) {</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        help();</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <a class="code" href="classConsole.html#a93bc2aaf049d20743ab8cca114274e85">help</a>();</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">if</span> (ret) {</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        std::cout &lt;&lt; game;</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">if</span> (game.is_victory()) {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">if</span> (game.<a class="code" href="classBoard.html#a6e5095b59a8a9d727cdc31c146e6652a">is_victory</a>()) {</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;You won the game!&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;But you can continue playing...&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;}</div>
+<div class="ttc" id="classBoard_html_a987b2a56c597e395ac3c9524b9a83723"><div class="ttname"><a href="classBoard.html#a987b2a56c597e395ac3c9524b9a83723">Board::fromW_toC</a></div><div class="ttdeci">bool fromW_toC(unsigned from, unsigned to)</div><div class="ttdef"><b>Definition:</b> <a href="Board_8cpp_source.html#l00185">Board.cpp:185</a></div></div>
+<div class="ttc" id="classBoard_html_af57837475a7f0c2093f04e1a45c64198"><div class="ttname"><a href="classBoard.html#af57837475a7f0c2093f04e1a45c64198">Board::save_game</a></div><div class="ttdeci">bool save_game(std::string filename)</div><div class="ttdef"><b>Definition:</b> <a href="Board_8cpp_source.html#l00027">Board.cpp:27</a></div></div>
+<div class="ttc" id="classBoard_html_a2c5fd637bb6d4cf7e5415f0d6dd2d9c8"><div class="ttname"><a href="classBoard.html#a2c5fd637bb6d4cf7e5415f0d6dd2d9c8">Board::fromV_toW</a></div><div class="ttdeci">bool fromV_toW(unsigned to)</div><div class="ttdef"><b>Definition:</b> <a href="Board_8cpp_source.html#l00240">Board.cpp:240</a></div></div>
+<div class="ttc" id="classBoard_html_af66c8ba392dc8f3168f35f6f00e66edb"><div class="ttname"><a href="classBoard.html#af66c8ba392dc8f3168f35f6f00e66edb">Board::fromC_toC</a></div><div class="ttdeci">bool fromC_toC(unsigned from, unsigned to)</div><div class="ttdef"><b>Definition:</b> <a href="Board_8cpp_source.html#l00174">Board.cpp:174</a></div></div>
+<div class="ttc" id="classBoard_html_ad53ee57725c6ba522041b4e0aa01c91f"><div class="ttname"><a href="classBoard.html#ad53ee57725c6ba522041b4e0aa01c91f">Board::fromH_toV</a></div><div class="ttdeci">void fromH_toV()</div><div class="ttdef"><b>Definition:</b> <a href="Board_8cpp_source.html#l00255">Board.cpp:255</a></div></div>
+<div class="ttc" id="classBoard_html_aa394fe2d89189fbab18ced675a6c2bad"><div class="ttname"><a href="classBoard.html#aa394fe2d89189fbab18ced675a6c2bad">Board::undo</a></div><div class="ttdeci">Move undo()</div><div class="ttdef"><b>Definition:</b> <a href="Board_8cpp_source.html#l00278">Board.cpp:278</a></div></div>
+<div class="ttc" id="classBoard_html_a93899071c351ad008fbdbca79b828e7b"><div class="ttname"><a href="classBoard.html#a93899071c351ad008fbdbca79b828e7b">Board::new_game</a></div><div class="ttdeci">void new_game()</div><div class="ttdef"><b>Definition:</b> <a href="Board_8cpp_source.html#l00009">Board.cpp:9</a></div></div>
+<div class="ttc" id="classMove_html_a9526f65375f965b469badf52416d1c65"><div class="ttname"><a href="classMove.html#a9526f65375f965b469badf52416d1c65">Move::is_move_invalid</a></div><div class="ttdeci">bool is_move_invalid() const </div><div class="ttdef"><b>Definition:</b> <a href="Move_8hpp_source.html#l00115">Move.hpp:115</a></div></div>
+<div class="ttc" id="classBoard_html_ab1c798d97ef04060e8f98ee24dd88529"><div class="ttname"><a href="classBoard.html#ab1c798d97ef04060e8f98ee24dd88529">Board::fromC_toW</a></div><div class="ttdeci">bool fromC_toW(unsigned from, unsigned to)</div><div class="ttdef"><b>Definition:</b> <a href="Board_8cpp_source.html#l00205">Board.cpp:205</a></div></div>
+<div class="ttc" id="classBoard_html_a2eefe5ff6ece3d37419229849bd021fa"><div class="ttname"><a href="classBoard.html#a2eefe5ff6ece3d37419229849bd021fa">Board::fromV_toC</a></div><div class="ttdeci">bool fromV_toC(unsigned to)</div><div class="ttdef"><b>Definition:</b> <a href="Board_8cpp_source.html#l00225">Board.cpp:225</a></div></div>
+<div class="ttc" id="Console_8hpp_html"><div class="ttname"><a href="Console_8hpp.html">Console.hpp</a></div></div>
+<div class="ttc" id="classConsole_html_a8a1727a4bff3acc851673463a2737782"><div class="ttname"><a href="classConsole.html#a8a1727a4bff3acc851673463a2737782">Console::string_to_command</a></div><div class="ttdeci">bool string_to_command(std::string str)</div><div class="ttdef"><b>Definition:</b> <a href="Console_8cpp_source.html#l00009">Console.cpp:9</a></div></div>
+<div class="ttc" id="classMove_html"><div class="ttname"><a href="classMove.html">Move</a></div><div class="ttdoc">Class representing moves. </div><div class="ttdef"><b>Definition:</b> <a href="Move_8hpp_source.html#l00030">Move.hpp:30</a></div></div>
+<div class="ttc" id="classBoard_html_a6e5095b59a8a9d727cdc31c146e6652a"><div class="ttname"><a href="classBoard.html#a6e5095b59a8a9d727cdc31c146e6652a">Board::is_victory</a></div><div class="ttdeci">bool is_victory()</div><div class="ttdef"><b>Definition:</b> <a href="Board_8cpp_source.html#l00139">Board.cpp:139</a></div></div>
+<div class="ttc" id="classBoard_html_a0cf3cf125c537aaa3142ebfa50945a11"><div class="ttname"><a href="classBoard.html#a0cf3cf125c537aaa3142ebfa50945a11">Board::help</a></div><div class="ttdeci">Move help()</div><div class="ttdef"><b>Definition:</b> <a href="Board_8cpp_source.html#l00344">Board.cpp:344</a></div></div>
+<div class="ttc" id="classCard_html_a332f8fe607bf658f0d329fadeef8aa89"><div class="ttname"><a href="classCard.html#a332f8fe607bf658f0d329fadeef8aa89">Card::string_to_card</a></div><div class="ttdeci">static Card string_to_card(std::string str, unsigned idx=0)</div><div class="ttdef"><b>Definition:</b> <a href="Card_8hpp_source.html#l00169">Card.hpp:169</a></div></div>
+<div class="ttc" id="classBoard_html_ac8285cf26a59a7b1ae3082e512996a8d"><div class="ttname"><a href="classBoard.html#ac8285cf26a59a7b1ae3082e512996a8d">Board::load_game</a></div><div class="ttdeci">bool load_game(std::string filename)</div><div class="ttdef"><b>Definition:</b> <a href="Board_8cpp_source.html#l00049">Board.cpp:49</a></div></div>
+<div class="ttc" id="classCard_html"><div class="ttname"><a href="classCard.html">Card</a></div><div class="ttdoc">Class representing Card. </div><div class="ttdef"><b>Definition:</b> <a href="Card_8hpp_source.html#l00034">Card.hpp:34</a></div></div>
+<div class="ttc" id="classBoard_html_a9a9132339ba38154a0122ca3848c9de9"><div class="ttname"><a href="classBoard.html#a9a9132339ba38154a0122ca3848c9de9">Board::fromW_toW</a></div><div class="ttdeci">bool fromW_toW(unsigned from, unsigned to, Card card)</div><div class="ttdef"><b>Definition:</b> <a href="Board_8cpp_source.html#l00149">Board.cpp:149</a></div></div>
+<div class="ttc" id="classConsole_html_a93bc2aaf049d20743ab8cca114274e85"><div class="ttname"><a href="classConsole.html#a93bc2aaf049d20743ab8cca114274e85">Console::help</a></div><div class="ttdeci">void help()</div><div class="ttdef"><b>Definition:</b> <a href="Console_8cpp_source.html#l00062">Console.cpp:62</a></div></div>
+<div class="ttc" id="classConsole_html_a306e952b87cebaea3af3a7fb739bb227"><div class="ttname"><a href="classConsole.html#a306e952b87cebaea3af3a7fb739bb227">Console::command</a></div><div class="ttdeci">bool command(std::string cmd1, std::string cmd2, unsigned from, std::string cmd3, unsigned to, Card card)</div><div class="ttdef"><b>Definition:</b> <a href="Console_8cpp_source.html#l00084">Console.cpp:84</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,11 +1,15 @@
 var searchData=
 [
-  ['server',['server',['../classArguments.html#a79c2a9405eb1b91fb0b0a0875d781f8c',1,'Arguments']]],
-  ['set_5fcommand',['set_command',['../classRequest.html#a365842a27cc49d0ffed205f3051a01f9',1,'Request']]],
-  ['set_5ferror',['set_error',['../classResponse.html#ab3e195635796e090a6902efc35b0f58a',1,'Response']]],
-  ['set_5fhead',['set_head',['../classResponse.html#a9abb743a6d05e77301f3ead731f2cf90',1,'Response::set_head()'],['../classRequest.html#a339f929573ebe4df6976b3492f634324',1,'Request::set_head()']]],
-  ['set_5flen',['set_len',['../classResponse.html#a168b6704ed0d3518ad146efa936a18f1',1,'Response::set_len()'],['../classRequest.html#a212c896ec67cc1fe87cb80796b59e5aa',1,'Request::set_len()']]],
-  ['set_5fpath',['set_path',['../classRequest.html#a667eada0b15838f648906132c0d4cc6a',1,'Request']]],
-  ['set_5fport',['set_port',['../classArguments.html#accdb5e4ead0bcd42dc8d58ea7963cb34',1,'Arguments']]],
-  ['set_5froot_5ffolder',['set_root_folder',['../classArguments.html#a005e19abf2fa4adc585d47a7429ca5e5',1,'Arguments']]]
+  ['new',['New',['../classMain__Window.html#a6abd258872a2ff5b2394134c2beb90e3',1,'Main_Window']]],
+  ['new1',['new1',['../classMain__Window.html#ace6a87d4516a6f0e57c950f4afe234fc',1,'Main_Window']]],
+  ['new2',['new2',['../classMain__Window.html#a5da1b1db838f6906384a5b91125695fa',1,'Main_Window']]],
+  ['new3',['new3',['../classMain__Window.html#a3c2f47157fae77b9b39239808d8e1351',1,'Main_Window']]],
+  ['new4',['new4',['../classMain__Window.html#a9062466b24b7a293357ad2e3bb21d271',1,'Main_Window']]],
+  ['new_5fdeck',['new_deck',['../classCard__stack.html#a7a2b8d18e89189e37e785c6105c3781d',1,'Card_stack']]],
+  ['new_5fgame',['new_game',['../classBoard.html#a93899071c351ad008fbdbca79b828e7b',1,'Board::new_game()'],['../classG__Board.html#a365c4b646bb5529deb247f76d5a73028',1,'G_Board::new_game()']]],
+  ['new_5fgame1',['new_game1',['../classMain__Window.html#afeaaee0242c4deea3663ee6a1bf5d20a',1,'Main_Window']]],
+  ['new_5fgame2',['new_game2',['../classMain__Window.html#a714fc5be9af5a1f2874a509f232b4a60',1,'Main_Window']]],
+  ['new_5fgame3',['new_game3',['../classMain__Window.html#aa1dba644570840d3ef72a1bf3fb9d75e',1,'Main_Window']]],
+  ['new_5fgame4',['new_game4',['../classMain__Window.html#ad3cbe9d73eff77d0d4cb4f8702032d6b',1,'Main_Window']]],
+  ['new_5fgame_5fmenu',['new_game_menu',['../classMain__Window.html#a69f68043a39683452502f4167c872b6f',1,'Main_Window']]]
 ];
