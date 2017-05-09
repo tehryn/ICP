@@ -1,0 +1,18 @@
+<map id="src/game/Card_stack.hpp" name="src/game/Card_stack.hpp">
+<area shape="rect" id="node3" href="$Board_8hpp.html" title="src/game/Board.hpp" alt="" coords="231,188,369,217"/>
+<area shape="rect" id="node21" href="$Single__color__stack_8hpp.html" title="src/game/Single_color\l_stack.hpp" alt="" coords="5,83,155,130"/>
+<area shape="rect" id="node26" href="$Working__stack_8hpp.html" title="src/game/Working_stack.hpp" alt="" coords="560,92,752,121"/>
+<area shape="rect" id="node31" href="$Card__deck__hidden_8hpp.html" title="src/game/Card_deck\l_hidden.hpp" alt="" coords="229,83,371,130"/>
+<area shape="rect" id="node34" href="$Card__deck__visible_8hpp.html" title="src/game/Card_deck\l_visible.hpp" alt="" coords="395,83,536,130"/>
+<area shape="rect" id="node37" href="$Card__stack_8cpp_source.html" title="src/game/Card_stack.cpp" alt="" coords="776,92,947,121"/>
+<area shape="rect" id="node5" href="$Board_8cpp_source.html" title="src/game/Board.cpp" alt="" coords="61,275,200,304"/>
+<area shape="rect" id="node7" href="$Console_8hpp.html" title="src/game/Console.hpp" alt="" coords="224,275,376,304"/>
+<area shape="rect" id="node11" href="$g__board_8hpp.html" title="src/gui/g_board.hpp" alt="" coords="480,275,616,304"/>
+<area shape="rect" id="node9" href="$Console_8cpp_source.html" title="src/game/Console.cpp" alt="" coords="184,352,336,381"/>
+<area shape="rect" id="node13" href="$g__board_8cpp_source.html" title="src/gui/g_board.cpp" alt="" coords="360,352,496,381"/>
+<area shape="rect" id="node15" href="$g__stack_8cpp_source.html" title="src/gui/g_stack.cpp" alt="" coords="520,352,656,381"/>
+<area shape="rect" id="node17" href="$main__window_8hpp.html" title="src/gui/main_window.hpp" alt="" coords="680,352,848,381"/>
+<area shape="rect" id="node19" href="$main__window_8cpp_source.html" title="src/gui/main_window.cpp" alt="" coords="680,429,848,459"/>
+<area shape="rect" id="node24" href="$Single__color__stack_8cpp_source.html" title="src/game/Single_color\l_stack.cpp" alt="" coords="5,179,155,226"/>
+<area shape="rect" id="node29" href="$Working__stack_8cpp_source.html" title="src/game/Working_stack.cpp" alt="" coords="560,188,752,217"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="Console" name="Console">
+<area shape="rect" id="node2" href="$classBoard.html" title="Class representing table with cards. " alt="" coords="351,197,407,227"/>
+<area shape="rect" id="node4" href="$classCard__deck__hidden.html" title="Class representing deck of hidden cards. " alt="" coords="5,85,136,115"/>
+<area shape="rect" id="node6" href="$classCard__stack.html" title="Base class of multiple classes. " alt="" coords="257,5,345,35"/>
+<area shape="rect" id="node8" href="$classSingle__color__stack.html" title="Class representing stack with one color. " alt="" coords="160,85,291,115"/>
+<area shape="rect" id="node11" href="$classCard__deck__visible.html" title="Class representing deck of visible cards. " alt="" coords="315,85,443,115"/>
+<area shape="rect" id="node14" href="$classWorking__stack.html" title="Class representing stack of card with multiple colors. " alt="" coords="467,85,576,115"/>
+<area shape="rect" id="node17" href="$classHistory.html" title="Class that holds history of moves. " alt="" coords="600,85,664,115"/>
+<area shape="rect" id="node19" href="$classCard.html" title="Class representing Card. " alt="" coords="431,197,481,227"/>
+</map>

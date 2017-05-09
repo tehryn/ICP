@@ -1,0 +1,11 @@
+<map id="src/game/Console.hpp" name="src/game/Console.hpp">
+<area shape="rect" id="node3" href="$Board_8hpp.html" title="Board.hpp" alt="" coords="536,83,616,112"/>
+<area shape="rect" id="node5" href="$Card_8hpp.html" title="Card.hpp" alt="" coords="996,315,1071,344"/>
+<area shape="rect" id="node11" href="$Card__stack_8hpp.html" title="Card_stack.hpp" alt="" coords="697,237,812,267"/>
+<area shape="rect" id="node20" href="$Single__color__stack_8hpp.html" title="Single_color_stack.hpp" alt="" coords="856,160,1013,189"/>
+<area shape="rect" id="node24" href="$Working__stack_8hpp.html" title="Working_stack.hpp" alt="" coords="1037,160,1171,189"/>
+<area shape="rect" id="node28" href="$Card__deck__hidden_8hpp.html" title="Card_deck_hidden.hpp" alt="" coords="499,160,653,189"/>
+<area shape="rect" id="node31" href="$Card__deck__visible_8hpp.html" title="Card_deck_visible.hpp" alt="" coords="677,160,832,189"/>
+<area shape="rect" id="node34" href="$Move_8hpp.html" title="Move.hpp" alt="" coords="341,237,419,267"/>
+<area shape="rect" id="node38" href="$History_8hpp.html" title="History.hpp" alt="" coords="336,160,424,189"/>
+</map>
