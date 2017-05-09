@@ -16,10 +16,10 @@
 #include "../game/Move.hpp"
 #include "../game/Card.hpp"
 
-/// @var Variable representing width of one game board
-constexpr int GAME_WIDTH = 9 * CARD_WIDTH;
-/// @var Variable representing height of one game board
-constexpr int GAME_HEIGHT = 6 * CARD_HEIGHT;
+
+constexpr int GAME_WIDTH = 9 * CARD_WIDTH; ///< Variable representing width of one game board
+
+constexpr int GAME_HEIGHT = 6 * CARD_HEIGHT; ///< Variable representing height of one game board
 
 /**
  * @brief Class representing graphical view of table with cards.
@@ -30,31 +30,23 @@ class G_Board : public QWidget
 {
     Q_OBJECT
 private:
-    /// @var Game logic
-    Board game;
+    
+    Board game; ///< Game logic
+    
+    QVBoxLayout * card_board_layout; ///< Layout for whole game
 
-    /// @var Layout for whole game
-    QVBoxLayout * card_board_layout;
+    QWidget top_panel; ///< Top part of game
+    QWidget bottom_panel; ///< Botton part of game
 
-    /// @var Top part of game
-    QWidget top_panel;
-    /// @var Botton part of game
-    QWidget bottom_panel;
+    QHBoxLayout * top_panel_layout; ///< Layout for top part of game
+    QHBoxLayout * bottom_panel_layout; ///< Layout for bottom part of game
 
-    /// @var Layout for top part of game
-    QHBoxLayout * top_panel_layout;
-    /// @var Layout for bottom part of game
-    QHBoxLayout * bottom_panel_layout;
+    QWidget left_panel; ///< Left part of top panel
+    QWidget right_panel; ///< Right part of top panel
 
-    /// @var Left part of top panel
-    QWidget left_panel;
-    /// @var Right part of top panel
-    QWidget right_panel;
-
-    /// @var Layout for left part of top panel
-    QHBoxLayout * left_panel_layout;
-    /// @var Layout for right part of top panel
-    QHBoxLayout * right_panel_layout;
+    
+    QHBoxLayout * left_panel_layout; ///< Layout for left part of top panel
+    QHBoxLayout * right_panel_layout; ///< Layout for right part of top panel
 
     /// @var Graphical representation player's score
     QLabel score;
