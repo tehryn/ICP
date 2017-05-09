@@ -117,11 +117,6 @@ public:
      */
     explicit Main_Window(QWidget *parent = 0);
 
-    /**
-     * Destructor of class.
-     */
-    ~Main_Window();
-
 signals:
 
 private slots:

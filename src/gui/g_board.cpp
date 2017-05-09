@@ -95,7 +95,9 @@ void G_Board::readCards()
 {
     Card card;
     unsigned index = 0;
-
+    str_score  = "Score:\n";
+    str_score += std::to_string(game.get_score());
+    score.setText(str_score.c_str());
     // Card_deck_hidden
     Card_deck_hidden.clean();
     card = game.get_hidden_deck(index);
@@ -385,6 +387,8 @@ bool G_Board::load_game(std::string filename)
 void G_Board::undo()
 {
     game.undo();
+    str_score  = "Score:\n";
+    str_score += std::to_string(game.get_score());
     readCards();
 }
 

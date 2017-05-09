@@ -1,15 +1,22 @@
-
 CC=g++
 OFLAGS=-c -Wall -Wextra -pedantic -g -std=c++11 -O2
 CFLAGS=-std=c++11
 OBJDIR=build
 SRCDIR=src/game/
+GUIDIR=src/gui/
 MAIN=src/main/main.cpp
 OBJECT_GAME=$(addprefix $(OBJDIR)/, Card_stack.o Single_color_stack.o \
          	Working_stack.o Board.o Console.o hra2017-cli.o)
+GAME=$(addprefix $(SRCDIR), Board.cpp Console.hpp Board.hpp History.hpp \
+		Card_deck_hidden.hpp Move.hpp Card_deck_visible.hpp \
+		Single_color_stack.cpp Card.hpp Single_color_stack.hpp \
+		Card_stack.cpp Working_stack.cpp Card_stack.hpp \
+		Working_stack.hpp Console.cpp)
+GUI=$(addprefix $(GUIDIR), g_board.cpp g_card.hpp g_stack.hpp g_board.hpp  \
+		globals.hpp main_window.cpp g_card.cpp g_stack.cpp main_window.hpp)
 all: src/hra2017 src/hra2017-cli
 
-src/hra2017: src/Makefile
+src/hra2017: $(GAME) $(GUI) src/main/main.cpp src/Makefile
 	${MAKE} -C src
 
 src/Makefile: src/Solitaire.pro
