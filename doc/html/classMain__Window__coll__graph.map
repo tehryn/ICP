@@ -1,0 +1,14 @@
+<map id="Main_Window" name="Main_Window">
+<area shape="rect" id="node4" href="$classG__Board.html" title="Class representing graphical view of table with cards. " alt="" coords="633,295,705,324"/>
+<area shape="rect" id="node34" href="$classG__Stack.html" title="Class representing graphical view of stack of cards. " alt="" coords="901,343,973,372"/>
+<area shape="rect" id="node8" href="$classMove.html" title="Class representing moves. " alt="" coords="437,261,491,291"/>
+<area shape="rect" id="node10" href="$classCard.html" title="Class representing Card. " alt="" coords="188,289,239,319"/>
+<area shape="rect" id="node29" href="$classG__Card.html" title="Class representing graphical view of cards. " alt="" coords="431,315,497,344"/>
+<area shape="rect" id="node12" href="$classBoard.html" title="Class representing table with cards. " alt="" coords="436,144,492,173"/>
+<area shape="rect" id="node14" href="$classCard__deck__hidden.html" title="Class representing deck of hidden cards. " alt="" coords="148,168,279,197"/>
+<area shape="rect" id="node16" href="$classCard__stack.html" title="Base class of multiple classes. " alt="" coords="7,119,95,148"/>
+<area shape="rect" id="node18" href="$classSingle__color__stack.html" title="Class representing stack with one color. " alt="" coords="148,221,279,251"/>
+<area shape="rect" id="node21" href="$classCard__deck__visible.html" title="Class representing deck of visible cards. " alt="" coords="149,8,277,37"/>
+<area shape="rect" id="node24" href="$classWorking__stack.html" title="Class representing stack of card with multiple colors. " alt="" coords="159,61,268,91"/>
+<area shape="rect" id="node27" href="$classHistory.html" title="Class that holds history of moves. " alt="" coords="181,115,245,144"/>
+</map>
