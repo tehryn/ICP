@@ -23,16 +23,15 @@ class G_Stack : public QWidget
     Q_OBJECT
 
 private:
-    /// Vector of graphical cards
-    std::vector<G_Card*> stack;
-    /// Y axis shift down
-    uint positionY = 0;
-    /// Pointer to Board, because of calling Board functions
-    G_Board * board = nullptr;
-    /// Type of this stack
-    Stacks type = ErrStack;
-    /// Index of this stack in array of stacks
-    int id = 0;
+    
+    std::vector<G_Card*> stack; ///< Vector of graphical cards
+
+    uint positionY = 0; ///< Y axis shift down
+
+    G_Board * board = nullptr; ///< Pointer to Board, because of calling Board functions
+   
+    Stacks type = ErrStack;  ///< Type of this stack
+    int id = 0; ///< Index of this stack in array of stacks
 
     /**
      * Finds card in vector by Y position in stack.

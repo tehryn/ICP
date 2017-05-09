@@ -8,5 +8,7 @@
 #ifndef GLOBALS_HPP
 #define GLOBALS_HPP
 #include "g_card.hpp"
-enum Stacks{ ErrStack = 0, Hidden, Visible, Single_Color, Working };
+
+enum Stacks{ ErrStack = 0, Hidden, Visible, Single_Color, Working }; ///< Enum for stacks' types
+
 #endif // GLOBALS_HPP

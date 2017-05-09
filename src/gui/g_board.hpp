@@ -48,37 +48,28 @@ private:
     QHBoxLayout * left_panel_layout; ///< Layout for left part of top panel
     QHBoxLayout * right_panel_layout; ///< Layout for right part of top panel
 
-    /// @var Graphical representation player's score
-    QLabel score;
-    /// @var Player's score
-    std::string str_score;
+   
+    QLabel score; ///< Graphical representation player's score
+    
+    std::string str_score; ///< Player's score
 
-    /// @var Deck of hidden cards
-    G_Stack Card_deck_hidden;
-    /// @var Deck of visible cards
-    G_Stack Card_deck_visible;
-    /// @var Array of color stacks
-    G_Stack Single_color_stack[4];
-    /// @var Array of working stacks
-    G_Stack Working_stack[7];
+   
+    G_Stack Card_deck_hidden; ///< Deck of hidden cards
+    G_Stack Card_deck_visible; ///< Deck of visible cards
+    G_Stack Single_color_stack[4]; ///< Array of color stacks
+    G_Stack Working_stack[7]; ///< Array of working stacks
 
-    /// @var Variable which says if next click will call processing command
-    bool proc_move = false;
-    /// @var Type of the first clicked stack
-    Stacks from_type;
-    /// @var Type of the second clicked stack
-    Stacks to_type;
-    /// @var Index of the first clicked stack in array of stacks
-    int from_id;
-    /// @var Index of the second clicked stack in array of stacks
-    int to_id;
-    /// @var Pointer to graphical representation of clicked card
-    G_Card * clicked;
+   
+    bool proc_move = false; ///< Variable which says if next click will call processing command
+    Stacks from_type; ///< Type of the first clicked stack
+    Stacks to_type; ///< Type of the second clicked stack
+    int from_id; ///< Index of the first clicked stack in array of stacks
+    int to_id; ///< Index of the second clicked stack in array of stacks
+    G_Card * clicked; ///< Pointer to graphical representation of clicked card
 
-    /// @var One hint move
-    Move hint_move = Move(ERR, 0, 0, Card(0, ERR), false);
-    /// @var If player wanted help
-    bool was_hint = false;
+   
+    Move hint_move = Move(ERR, 0, 0, Card(0, ERR), false); ///< One hint move
+    bool was_hint = false; ///< If player wanted help
 
     /**
      * Reads all cards' location
